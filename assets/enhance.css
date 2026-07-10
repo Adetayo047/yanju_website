@@ -1,0 +1,447 @@
+/* Yanju Foundation — site-wide polish: hover states, animations, responsiveness */
+
+/* ---------- Interactive states ---------- */
+a[href],
+button {
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    background-color 0.18s ease, color 0.18s ease, filter 0.18s ease,
+    border-color 0.18s ease;
+}
+
+/* Pill buttons & CTAs: lift on hover, press on click */
+a.rounded-full:hover,
+button.rounded-full:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -10px rgba(69, 26, 3, 0.3);
+  filter: brightness(1.06);
+}
+a.rounded-full:active,
+button.rounded-full:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: 0 6px 12px -6px rgba(69, 26, 3, 0.25);
+}
+
+/* Text links: warm color shift */
+nav a:not(.rounded-full):hover,
+footer a:not(.rounded-full):hover {
+  color: #c2410c;
+}
+
+/* Cards: gentle lift */
+.grid > div[class*="bg-"],
+.grid > a[class*="bg-"] {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.grid > div[class*="bg-"]:hover,
+.grid > a[class*="bg-"]:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(69, 26, 3, 0.18);
+}
+
+/* ---------- Scroll-reveal animation ---------- */
+.yj-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.yj-reveal.yj-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Responsive fixes ---------- */
+img {
+  max-width: 100%;
+}
+html,
+body {
+  overflow-x: clip;
+}
+
+/* ---------- Slim header: the export hard-codes 190px logo blocks ---------- */
+header [style*="190px"],
+nav [style*="190px"],
+header [class*="h-[190px]"],
+nav [class*="h-[190px]"],
+footer [class*="h-[190px]"] {
+  height: auto !important;
+}
+header img[alt*="Logo"],
+nav img[alt*="Logo"] {
+  height: 84px !important;
+  width: auto !important;
+}
+header > nav,
+header > div.flex,
+nav.docked > div.flex {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+header.docked,
+nav.docked {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+footer [style*="190px"],
+footer a[class*="h-["] {
+  height: auto !important;
+}
+footer img[alt*="Logo"] {
+  height: 96px !important;
+  width: auto !important;
+}
+
+/* ---------- Photo hover: gentle zoom ---------- */
+.grid img,
+section a img {
+  transition: transform 0.45s ease;
+}
+.grid > *:hover > img,
+.grid > * > :hover > img,
+a:hover > img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 767px) {
+  /* payment-method logo row on the donate page */
+  img.opacity-40 {
+    max-height: 20px;
+    width: auto;
+  }
+  /* the Contact pill is in the mobile menu; hide it in cramped headers */
+  header a.rounded-full[href="faq.html"],
+  nav a.rounded-full[href="faq.html"] {
+    display: none;
+  }
+  /* the exported logo blocks are hard-coded to 190px — far too big on phones */
+  div[style*="190px"] {
+    height: 72px !important;
+  }
+  img[alt*="Logo"] {
+    height: 72px !important;
+    width: auto !important;
+  }
+  a[class*="h-["] > img[alt*="Logo"] {
+    height: 72px !important;
+  }
+  /* scale display typography down */
+  .text-display-lg {
+    font-size: 34px !important;
+    line-height: 42px !important;
+  }
+  .text-headline-lg {
+    font-size: 28px !important;
+    line-height: 36px !important;
+  }
+  .text-headline-md {
+    font-size: 22px !important;
+    line-height: 30px !important;
+  }
+}
+
+/* ---------- Mobile menu ---------- */
+.yj-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border-radius: 9999px;
+  background: rgba(141, 75, 0, 0.08);
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.yj-burger span {
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: #d97706;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+@media (max-width: 767px) {
+  .yj-burger {
+    display: flex;
+  }
+}
+.yj-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: #fff8f6;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.yj-menu.yj-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+.yj-menu-close {
+  align-self: flex-end;
+  background: rgba(141, 75, 0, 0.08);
+  border: none;
+  border-radius: 9999px;
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+  color: #d97706;
+  cursor: pointer;
+}
+.yj-menu nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 16px;
+  overflow-y: auto;
+}
+.yj-menu nav a {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #451a03;
+  text-decoration: none;
+  padding: 10px 8px;
+  border-radius: 12px;
+}
+.yj-menu nav a:hover {
+  background: #ffeae1;
+  color: #c2410c;
+}
+.yj-menu nav a.yj-current {
+  color: #c2410c;
+}
+.yj-menu .yj-menu-cta {
+  margin-top: auto;
+  display: flex;
+  gap: 12px;
+}
+.yj-menu .yj-menu-cta a {
+  flex: 1;
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px;
+  border-radius: 9999px;
+  text-decoration: none;
+}
+.yj-menu .yj-cta-donate {
+  background: #c2410c;
+  color: #fff;
+}
+.yj-menu .yj-cta-sponsor {
+  border: 2px solid #d97706;
+  color: #d97706;
+}
+
+/* ---------- Footer contact strip ---------- */
+.yj-footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 32px;
+  padding: 20px 24px;
+  border-top: 1px solid rgba(136, 115, 100, 0.25);
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+}
+.yj-footer-contact a {
+  color: #554336;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.yj-footer-contact a:hover {
+  color: #c2410c;
+}
+.yj-footer-contact .material-symbols-outlined {
+  font-size: 18px;
+  color: #d97706;
+}
+
+/* ---------- Floating chat widget ---------- */
+#yj-chat-root {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 150;
+}
+#yj-chat-toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 9999px;
+  background: #c2410c;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 16px 32px -8px rgba(69, 26, 3, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#yj-chat-toggle:hover {
+  transform: scale(1.08);
+}
+#yj-chat-toggle:active {
+  transform: scale(0.94);
+}
+#yj-chat-window {
+  position: absolute;
+  bottom: 76px;
+  right: 0;
+  width: min(360px, calc(100vw - 2rem));
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px -12px rgba(69, 26, 3, 0.35);
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  animation: yj-pop 0.25s ease;
+}
+#yj-chat-window.yj-open {
+  display: flex;
+}
+@keyframes yj-pop {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.yj-chat-head {
+  background: #d97706;
+  color: #fff;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Inter, sans-serif;
+}
+.yj-chat-head .yj-title {
+  font-weight: 700;
+  font-size: 14px;
+}
+.yj-chat-head .yj-sub {
+  font-size: 10px;
+  opacity: 0.8;
+}
+.yj-chat-head button {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #fff;
+  border-radius: 9999px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 16px;
+}
+#yj-chat-thread {
+  height: 360px;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fff8f6;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+}
+.yj-msg {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  animation: yj-pop 0.2s ease;
+}
+.yj-msg-bot {
+  background: #ffeae1;
+  color: #554336;
+  border-bottom-left-radius: 4px;
+  align-self: flex-start;
+}
+.yj-msg-user {
+  background: #d97706;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+  align-self: flex-end;
+}
+.yj-msg-typing {
+  color: #887364;
+  font-style: italic;
+}
+.yj-chat-inputrow {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  background: #fff;
+  border-top: 1px solid #dbc2b0;
+}
+.yj-chat-inputrow input {
+  flex: 1;
+  border: none;
+  background: #ffeae1;
+  border-radius: 9999px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  outline: none;
+}
+.yj-chat-inputrow input:focus {
+  box-shadow: 0 0 0 2px #b45309;
+}
+.yj-chat-inputrow button {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  border: none;
+  background: #c2410c;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ---------- Slim header on phones (must follow the desktop rule) ---------- */
+@media (max-width: 767px) {
+  header img[alt*="Logo"],
+  nav img[alt*="Logo"] {
+    height: 60px !important;
+  }
+  footer img[alt*="Logo"] {
+    height: 72px !important;
+  }
+}
+
+/* ---------- Stat counter ---------- */
+.yj-count {
+  display: inline-block;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .yj-reveal,
+  .yj-reveal.yj-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  a[href],
+  button,
+  .grid > div[class*="bg-"] {
+    transition: none;
+  }
+}

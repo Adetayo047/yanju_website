@@ -1,0 +1,613 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Donate | Yanju Foundation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#002116",
+                    "primary-fixed": "#ffdcc3",
+                    "surface-container-low": "#fff1eb",
+                    "tertiary": "#065f46",
+                    "on-background": "#451a03",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#fff8f6",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#d97706",
+                    "primary-container": "#b45309",
+                    "background": "#fff8f6",
+                    "inverse-on-surface": "#ffede6",
+                    "on-secondary-fixed": "#390c00",
+                    "surface-bright": "#fff8f6",
+                    "inverse-surface": "#51230a",
+                    "on-secondary-fixed-variant": "#832600",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#ffd0bc",
+                    "surface-container-high": "#ffe2d7",
+                    "on-surface-variant": "#554336",
+                    "tertiary-fixed-dim": "#8bd6b6",
+                    "on-error": "#ffffff",
+                    "outline": "#887364",
+                    "on-tertiary-fixed-variant": "#00513b",
+                    "on-tertiary-container": "#f5fff8",
+                    "surface-container-highest": "#ffdbcc",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "on-primary-container": "#fffbff",
+                    "surface-container": "#ffeae1",
+                    "on-secondary-container": "#5d1900",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#ffb77d",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#ffb77d",
+                    "secondary": "#c2410c",
+                    "tertiary-fixed": "#a6f2d1",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#ffdbcc",
+                    "secondary-fixed": "#ffdbd0",
+                    "outline-variant": "#dbc2b0",
+                    "on-surface": "#451a03",
+                    "secondary-container": "#fd6b36",
+                    "surface-tint": "#d97706",
+                    "on-primary-fixed": "#2f1500",
+                    "tertiary-container": "#047857",
+                    "secondary-fixed-dim": "#ffb59d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "stack-sm": "16px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "stack-md": "32px",
+                    "stack-lg": "80px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .donation-card-shadow {
+            box-shadow: 0 20px 40px -10px rgba(69, 26, 3, 0.12);
+        }
+        .transition-all-custom {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .active-amount {
+            background-color: #d97706;
+            color: white;
+            border-color: #d97706;
+        }
+        @keyframes yj-heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.18); }
+            40% { transform: scale(1); }
+            55% { transform: scale(1.12); }
+            70% { transform: scale(1); }
+        }
+        .yj-heart { animation: yj-heartbeat 1.8s ease-in-out infinite; }
+        @keyframes yj-impact-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: none; }
+        }
+        .yj-impact-swap { animation: yj-impact-in 0.45s ease; }
+        .pay-option {
+            border: 2px solid #dbc2b0;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .pay-option:hover { border-color: #b45309; transform: translateY(-2px); }
+        .pay-option.selected {
+            border-color: #d97706;
+            background: #fff1eb;
+            box-shadow: 0 10px 24px -12px rgba(69, 26, 3, 0.25);
+        }
+        .card-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid #dbc2b0;
+            background: #fff;
+            font-family: Inter, sans-serif;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+        }
+        .sidebar-impact-active {
+            outline: 2px solid #065f46;
+            outline-offset: 6px;
+            border-radius: 8px;
+            transition: outline-color 0.3s ease;
+        }
+        @keyframes yj-float-heart {
+            0% { opacity: 1; transform: translateY(0) scale(0.6); }
+            100% { opacity: 0; transform: translateY(-140px) scale(1.3); }
+        }
+        .yj-float-heart {
+            position: absolute;
+            color: #c2410c;
+            font-size: 22px;
+            pointer-events: none;
+            animation: yj-float-heart 1.4s ease-out forwards;
+        }
+    </style>
+<link href="assets/enhance.css?v=4" rel="stylesheet">
+<script defer src="assets/enhance.js?v=4"></script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased">
+<!-- Top Navigation Bar -->
+<nav class="docked full-width top-0 sticky z-50 shadow-sm bg-surface dark:bg-inverse-surface">
+<div class="flex justify-between items-center gap-6 px-gutter py-4 w-full max-w-container-max mx-auto">
+<div class="shrink-0 flex items-center" style="height: 190px;"><img src="assets/logo.png" alt="Yanju Foundation Logo" class="h-32 w-auto object-contain" style="height: 190px; width: auto; "></div>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="index.html">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="about.html">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="programs.html">Programs</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="gallery.html">Gallery</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="success-stories.html">Success Stories</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="volunteer.html">Volunteer</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="faq.html" class="hidden md:block font-label-md text-label-md text-primary font-semibold hover:text-primary-container transition-colors" style="text-align:center">Contact</a>
+<a href="donate.html" class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md text-label-md font-bold shadow-md hover:bg-primary-container active:scale-95 transition-all duration-150" style="text-align:center">
+                    Donate
+                </a>
+</div>
+</div>
+</nav>
+<main class="w-full">
+<!-- Hero Section / Context -->
+<section class="relative pt-stack-lg pb-stack-md px-gutter max-w-container-max mx-auto text-center overflow-hidden">
+<div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-tertiary/10 text-tertiary font-label-md text-label-md">
+                Empowering Communities Through Generosity
+            </div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 leading-tight max-w-3xl mx-auto">
+                Transform a Life Today with Your Kind Donation
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-md">
+                Every Naira you give goes directly towards providing quality education, healthcare, and mentorship for underserved youth in Nigeria.
+            </p>
+</section>
+<!-- Donation Interface Section -->
+<section class="px-gutter pb-stack-lg max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-stack-md items-start">
+<!-- Impact & Trust Sidebar -->
+<div class="lg:col-span-5 space-y-8">
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/30">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Your Impact</h3>
+<div class="space-y-6" id="impact-breakdown">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary mb-1">₦5,000 Donation</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Provides school supplies and textbooks for one student for an entire term.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">lunch_dining</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary mb-1">₦10,000 Donation</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Covers nutritious daily school lunches for two children for a month.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">medical_services</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary mb-1">₦50,000 Donation</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Sponsors full tuition and comprehensive health checkups for a student for a year.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 space-y-6">
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Cards We Accept</h4>
+<div class="flex flex-wrap gap-3 items-center">
+<span class="card-badge" style="color:#1a1f71">VISA</span>
+<span class="card-badge"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#eb001b;margin-right:-4px"></span><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#f79e1b;opacity:.9;margin-right:6px"></span>Mastercard</span>
+<span class="card-badge" style="color:#00425f">VERVE<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ee312a;margin-left:4px"></span></span>
+<span class="card-badge" style="color:#011b33">Pay<span style="color:#00c3f7">stack</span></span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Debit and credit cards — Visa, Mastercard and Verve — plus direct bank transfer.</p>
+<div class="flex items-center gap-3 text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-md text-label-md">100% Secure &amp; Encrypted Payment Process</span>
+</div>
+<div class="flex items-center gap-3 text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-label-md text-label-md">Registered NGO with the CAC, Nigeria</span>
+</div>
+</div>
+</div>
+<!-- Main Donation Form -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-8 md:p-12 rounded-xl donation-card-shadow border border-surface-container-highest">
+<div class="flex flex-col gap-10">
+<!-- Toggle Switch -->
+<div class="flex p-1 bg-surface-container rounded-full w-fit mx-auto md:mx-0">
+<button class="px-8 py-2.5 rounded-full font-label-md text-label-md bg-white text-primary shadow-sm transition-all-custom" id="toggle-one-time">One-time</button>
+<button class="px-8 py-2.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all-custom" id="toggle-monthly">Monthly</button>
+</div>
+<!-- Preset Amounts -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<button class="amount-btn border-2 border-outline-variant rounded-xl py-6 px-4 font-headline-md text-headline-md text-on-surface hover:border-primary transition-all-custom group active:scale-95" data-amount="5000">
+                            ₦5,000
+                        </button>
+<button class="amount-btn border-2 border-outline-variant rounded-xl py-6 px-4 font-headline-md text-headline-md text-on-surface hover:border-primary transition-all-custom group active:scale-95 active-amount" data-amount="10000">
+                            ₦10,000
+                        </button>
+<button class="amount-btn border-2 border-outline-variant rounded-xl py-6 px-4 font-headline-md text-headline-md text-on-surface hover:border-primary transition-all-custom group active:scale-95" data-amount="50000">
+                            ₦50,000
+                        </button>
+<!-- Custom Input Field -->
+<div class="col-span-2 md:col-span-3 relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 font-headline-md text-headline-md text-outline">₦</span>
+<input id="custom-amount" class="w-full pl-12 pr-4 py-6 rounded-xl border-2 border-outline-variant focus:border-secondary-container focus:ring-secondary-container font-headline-md text-headline-md transition-all-custom outline-none placeholder:text-outline-variant" placeholder="Other Amount" type="number" min="100">
+</div>
+</div>
+<!-- Live impact message -->
+<div id="impact-live" class="flex items-center gap-4 bg-tertiary/5 border border-tertiary/20 rounded-xl p-5">
+<div class="w-12 h-12 shrink-0 bg-tertiary/10 rounded-full flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" id="impact-live-icon" style="font-variation-settings: 'FILL' 1;">lunch_dining</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface" id="impact-live-text"></p>
+</div>
+<!-- Payment method -->
+<div class="flex flex-col gap-4">
+<h4 class="font-headline-md text-headline-md text-on-surface">Select Payment Method</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="pay-option selected p-5 flex flex-col gap-3" data-method="card" role="radio" aria-checked="true" tabindex="0">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Debit / Credit Card</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="card-badge" style="color:#1a1f71">VISA</span>
+<span class="card-badge"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#eb001b;margin-right:-3px"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#f79e1b;opacity:.9;margin-right:5px"></span>Mastercard</span>
+<span class="card-badge" style="color:#00425f">VERVE<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#ee312a;margin-left:3px"></span></span>
+</div>
+</div>
+<div class="pay-option p-5 flex flex-col gap-3" data-method="transfer" role="radio" aria-checked="false" tabindex="0">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Bank Transfer</span>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant">We'll send the foundation's official account details to your email.</p>
+</div>
+</div>
+</div>
+<!-- Donor Details -->
+<div class="flex flex-col gap-4">
+<h4 class="font-headline-md text-headline-md text-on-surface">Your Information</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant" for="donor-first">First Name</label>
+<input id="donor-first" class="px-4 py-4 rounded-xl border border-outline-variant focus:border-primary outline-none bg-surface-container-lowest" placeholder="First name" type="text" autocomplete="given-name">
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant" for="donor-last">Last Name</label>
+<input id="donor-last" class="px-4 py-4 rounded-xl border border-outline-variant focus:border-primary outline-none bg-surface-container-lowest" placeholder="Last name" type="text" autocomplete="family-name">
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant" for="donor-email">Email Address</label>
+<input id="donor-email" class="px-4 py-4 rounded-xl border border-outline-variant focus:border-primary outline-none bg-surface-container-lowest" placeholder="you@example.com" type="email" autocomplete="email">
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant" for="donor-phone">Phone (optional)</label>
+<input id="donor-phone" class="px-4 py-4 rounded-xl border border-outline-variant focus:border-primary outline-none bg-surface-container-lowest" placeholder="+234..." type="tel" autocomplete="tel">
+</div>
+</div>
+</div>
+<!-- CTA Button -->
+<div class="flex flex-col gap-4 relative" id="donate-cta-wrap">
+<button id="donate-submit" class="w-full bg-primary text-on-primary py-6 rounded-full font-headline-md text-headline-md font-bold shadow-xl hover:bg-primary-container active:scale-95 transition-all-custom flex items-center justify-center gap-3">
+<span class="material-symbols-outlined yj-heart" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span id="donate-submit-label">Donate ₦10,000</span>
+                        </button>
+<p id="donate-feedback" class="hidden text-center font-body-md text-body-md text-tertiary font-semibold"></p>
+<p class="text-center text-on-surface-variant font-label-md text-label-md px-4">
+                            By donating, you agree to our <a class="underline text-primary" href="#">Terms of Service</a> and <a class="underline text-primary" href="#">Privacy Policy</a>.
+                        </p>
+</div>
+<!-- Payment Badges -->
+<div class="flex justify-center items-center gap-6 pt-4 border-t border-outline-variant/20">
+<span class="font-label-md text-on-surface-variant">SECURE CHECKOUT VIA:</span>
+<div class="flex gap-4 items-center">
+<img class="h-5 opacity-40" data-alt="A stylized minimalist icon of a Visa payment card logo in a warm corporate brand color scheme for a professional NGO website." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUaBaJYZcoLjxWfK-Wqms2YwXJ28ziP24ylIbdfFYOcrpjIunkLQYtZVfz_F4BYaXPVkU48h7vzdGYbp2K82uyGwgm6xJv_MSvffZhN0EvK2ybLGeUU7Ik8ibZhTGrfipaoBkSXxfKSuE4mg0DzcNusnTz5_86VJseZb1nPKWWcFBvOsvX5HfkypWb5JIyAkRwJuKQ6RLfTWoJjXfX3C3GFzYELvvBbMVEUfbXNhxwEebGoTyU7BJDmQ">
+<img class="h-8 opacity-40" data-alt="A stylized minimalist icon of a Mastercard payment card logo in a warm corporate brand color scheme for a professional NGO website." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQHZVclg6uz_Yei0JG04d57WDXQgtwgZetJdTW0dm8vqNQgJFmp5D8kzK5fv1ukzvShzQ4Q6I8tyopCNseJiZW7AEHNJ8cSzcfIXgA8B_qajxbk8Em1BeOHbfhQliFFDgo5qVUa_y62mz85ZWTkkh-YsUbX70bWtSgUnuCWB5_NEwfDz8YTTJTVuB2YqSCtfMpi6UjzenDryqAYxn-Ruh8JvwsLc3xft7Pj6eB-8AmoPfxxNiqEuTC6Q">
+<img class="h-6 opacity-40" data-alt="A clean, vector-style Paystack logo representing safe online transactions, integrated seamlessly into a warm cream and terracotta colored UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSmfJJ8Wl1O-tJylx0Vm_m33vqSbxXmvejenCuP6qnThPhg1LQFH4HG7ABqpWixCYGpYOFO8qifzNPUP_qbBlZpQv2yAzldXArvqwoatwSenTXyJ3lncYIWchyNkyALpPZFAJfdPUC_16_OYZrCE6MvOZJmaC1NwOw6VbTKJU39e8wIjcXq6wtXFTyZh6ZYXCzym6woA7tZbGJPYZ81lqzFztKhec5z2WBQGu1s2pe5pOT_LvW4briuA">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Alternative Ways to Give Section -->
+<section class="bg-surface-container-high py-stack-lg">
+<div class="px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Other Ways to Create Change</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Beyond monetary donations, your partnership can take many forms.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-sm">
+<!-- Alternative 1: Sponsor a Child -->
+<div class="bg-white p-8 rounded-xl donation-card-shadow flex flex-col items-center text-center group cursor-pointer hover:-translate-y-2 transition-all-custom">
+<div class="w-16 h-16 rounded-full bg-secondary-container/10 text-secondary mb-6 flex items-center justify-center group-hover:bg-secondary-container group-hover:text-white transition-all-custom">
+<span class="material-symbols-outlined !text-3xl">child_care</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-4 text-on-surface">Sponsor a Child</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Build a meaningful relationship through a monthly commitment to a specific student's journey.</p>
+<a class="text-primary font-bold font-label-md text-label-md flex items-center gap-2 group-hover:gap-3 transition-all" href="programs.html">Learn More <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+<!-- Alternative 2: Corporate Partnerships -->
+<div class="bg-white p-8 rounded-xl donation-card-shadow flex flex-col items-center text-center group cursor-pointer hover:-translate-y-2 transition-all-custom">
+<div class="w-16 h-16 rounded-full bg-tertiary/10 text-tertiary mb-6 flex items-center justify-center group-hover:bg-tertiary group-hover:text-white transition-all-custom">
+<span class="material-symbols-outlined !text-3xl">corporate_fare</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-4 text-on-surface">Corporate Giving</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Align your company’s values with impactful social responsibility programs through Yanju.</p>
+<a class="text-primary font-bold font-label-md text-label-md flex items-center gap-2 group-hover:gap-3 transition-all" href="volunteer.html">Partner With Us <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+<!-- Alternative 3: Legacy Giving -->
+<div class="bg-white p-8 rounded-xl donation-card-shadow flex flex-col items-center text-center group cursor-pointer hover:-translate-y-2 transition-all-custom">
+<div class="w-16 h-16 rounded-full bg-primary/10 text-primary mb-6 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all-custom">
+<span class="material-symbols-outlined !text-3xl">history_edu</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-4 text-on-surface">Leave a Legacy</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Plan for a future where your impact continues to empower generations yet to come.</p>
+<a class="text-primary font-bold font-label-md text-label-md flex items-center gap-2 group-hover:gap-3 transition-all" href="success-stories.html">Read More <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial/Proof Section -->
+<section class="py-stack-lg px-gutter max-w-container-max mx-auto flex flex-col lg:flex-row items-center gap-stack-md">
+<div class="lg:w-1/2 relative">
+<div class="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="A joyful candid photograph of a young Nigerian student wearing a neat school uniform, smiling warmly at the camera while holding a new stack of books. The scene is bathed in soft, golden hour natural light, highlighting the vibrant classroom setting in the background. The atmosphere is filled with hope and dignity, reflecting a premium NGO aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3Os-qfPAXAfyOTez0XJSE_iV5T3H63E5UINM1yKNFuKbaAhOz35o9XIgaqMALakPWX_XiukGs47zMYYUylma1W-zunK_t0HyAEW9cF87c6JIOn7oOWKsY3B3gwAAAHlMU2VaZcq0oQXKKChKdPe9nQFBuAmGXOS-tVncVe0j2G4rCzLa8FkfiPWuSGaWVosXcmVGvV4v_81C2mQ-pgKA_p9xqa_kPv2v6qeNQlvfqL31rn5Wly9bOLw">
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary-container rounded-full z-[-1] opacity-20"></div>
+<div class="absolute -top-6 -left-6 w-48 h-48 bg-primary-container rounded-full z-[-1] opacity-10"></div>
+</div>
+<div class="lg:w-1/2 space-y-6">
+<span class="material-symbols-outlined text-primary !text-5xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface italic leading-snug">
+                    "Because of the scholarship from Yanju, I am the first in my family to attend university. My donation today is my way of keeping that light burning for others."
+                </h2>
+<div class="pt-4">
+<p class="font-headline-md text-headline-md text-on-surface">Chinelo Okafor</p>
+<p class="font-label-md text-label-md text-primary font-semibold">Scholarship Alumna &amp; Monthly Donor</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="full-width bg-surface-container-highest dark:bg-on-tertiary-fixed">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-md px-gutter py-stack-lg w-full max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<div class="w-fit mb-6 flex items-center" style="height: 190px;"><img src="assets/logo.png" alt="Yanju Foundation Logo" class="h-40 w-auto object-contain" style="height: 190px; width: auto; "></div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant">Building a future where every child has the access and mentorship they need to thrive.</p>
+<div class="flex gap-4 pt-2">
+<a href="https://www.instagram.com/yanjufoundation" target="_blank" rel="noopener" aria-label="Instagram" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">photo_camera</span>
+</a>
+<a href="mailto:yanjufoundation@gmail.com" aria-label="Email" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+<div class="space-y-1 pt-2">
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant"><a class="hover:text-secondary transition-colors" href="mailto:yanjufoundation@gmail.com">yanjufoundation@gmail.com</a></p>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant"><a class="hover:text-secondary transition-colors" href="tel:+2347047444628">+234 704 744 4628</a></p>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-md text-label-md text-primary dark:text-primary-fixed font-bold uppercase tracking-widest">Navigation</h5>
+<ul class="space-y-3">
+<li class=""><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors duration-200" href="index.html">Home</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors duration-200" href="about.html">About Us</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors duration-200" href="programs.html">Our Programs</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors duration-200" href="success-stories.html">Success Stories</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-md text-label-md text-primary dark:text-primary-fixed font-bold uppercase tracking-widest">Get Involved</h5>
+<ul class="space-y-3">
+<li class=""><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors duration-200" href="volunteer.html">Volunteer</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors duration-200" href="volunteer.html">Corporate Partnership</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors duration-200" href="donate.html">Donate Now</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors duration-200" href="faq.html">Contact Us</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-md text-label-md text-primary dark:text-primary-fixed font-bold uppercase tracking-widest">Transparency</h5>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant">Yanju Foundation is a registered NGO (CAC Reg: XXXX). We publish annual impact reports to ensure total accountability to our donors.</p>
+<a class="underline text-primary dark:text-primary-fixed font-bold" href="#">Download 2023 Impact Report</a>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 px-gutter py-6 text-center">
+<p class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant">
+                © 2024 Yanju Foundation. Registered with CAC. All rights reserved.
+            </p>
+</div>
+<div class="yj-footer-contact">
+<a href="https://www.instagram.com/yanjufoundation" target="_blank" rel="noopener"><span class="material-symbols-outlined">photo_camera</span>Instagram: @yanjufoundation</a>
+<a href="mailto:yanjufoundation@gmail.com"><span class="material-symbols-outlined">mail</span>yanjufoundation@gmail.com</a>
+<a href="tel:+2347047444628"><span class="material-symbols-outlined">call</span>+234 704 744 4628</a>
+</div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+(function () {
+    var state = { freq: 'one-time', amount: 10000, method: 'card' };
+
+    var IMPACTS = [
+        { min: 50000, icon: 'medical_services', text: 'sponsors full tuition and comprehensive health checkups for a student for a whole year.' },
+        { min: 10000, icon: 'lunch_dining', text: 'covers nutritious daily school lunches for two children for a month.' },
+        { min: 5000, icon: 'school', text: 'provides school supplies and textbooks for one student for an entire term.' },
+        { min: 0, icon: 'menu_book', text: 'puts exercise books, pencils and learning materials in a pupil\u2019s hands.' }
+    ];
+
+    var fmt = function (n) { return '\u20a6' + Number(n).toLocaleString('en-NG'); };
+    var liveText = document.getElementById('impact-live-text');
+    var liveIcon = document.getElementById('impact-live-icon');
+    var liveBox = document.getElementById('impact-live');
+    var submitLabel = document.getElementById('donate-submit-label');
+    var sidebarItems = document.querySelectorAll('#impact-breakdown > div');
+
+    function render() {
+        var imp = IMPACTS.find(function (i) { return state.amount >= i.min; });
+        liveIcon.textContent = imp.icon;
+        liveText.innerHTML = 'Your <strong>' + fmt(state.amount) + (state.freq === 'monthly' ? ' every month' : '') + '</strong> ' + imp.text;
+        liveBox.classList.remove('yj-impact-swap');
+        void liveBox.offsetWidth;
+        liveBox.classList.add('yj-impact-swap');
+        submitLabel.textContent = 'Donate ' + fmt(state.amount) + (state.freq === 'monthly' ? ' Monthly' : '');
+        var tiers = [5000, 10000, 50000];
+        sidebarItems.forEach(function (item, i) {
+            item.classList.toggle('sidebar-impact-active', tiers[i] === state.amount);
+        });
+    }
+
+    // frequency toggle
+    var oneTimeBtn = document.getElementById('toggle-one-time');
+    var monthlyBtn = document.getElementById('toggle-monthly');
+    function setFreq(freq) {
+        state.freq = freq;
+        var on = freq === 'one-time' ? oneTimeBtn : monthlyBtn;
+        var off = freq === 'one-time' ? monthlyBtn : oneTimeBtn;
+        on.classList.add('bg-white', 'text-primary', 'shadow-sm');
+        on.classList.remove('text-on-surface-variant');
+        off.classList.remove('bg-white', 'text-primary', 'shadow-sm');
+        off.classList.add('text-on-surface-variant');
+        render();
+    }
+    oneTimeBtn.addEventListener('click', function () { setFreq('one-time'); });
+    monthlyBtn.addEventListener('click', function () { setFreq('monthly'); });
+
+    // amount selection
+    var amountBtns = document.querySelectorAll('.amount-btn');
+    var customInput = document.getElementById('custom-amount');
+    amountBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            amountBtns.forEach(function (b) { b.classList.remove('active-amount'); });
+            btn.classList.add('active-amount');
+            customInput.value = '';
+            state.amount = parseInt(btn.dataset.amount, 10);
+            render();
+        });
+    });
+    customInput.addEventListener('focus', function () {
+        amountBtns.forEach(function (b) { b.classList.remove('active-amount'); });
+    });
+    customInput.addEventListener('input', function () {
+        var v = parseInt(customInput.value, 10);
+        if (v > 0) { state.amount = v; render(); }
+    });
+
+    // payment method
+    document.querySelectorAll('.pay-option').forEach(function (opt) {
+        function choose() {
+            document.querySelectorAll('.pay-option').forEach(function (o) {
+                o.classList.remove('selected');
+                o.setAttribute('aria-checked', 'false');
+            });
+            opt.classList.add('selected');
+            opt.setAttribute('aria-checked', 'true');
+            state.method = opt.dataset.method;
+        }
+        opt.addEventListener('click', choose);
+        opt.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); choose(); } });
+    });
+
+    // submit: floating hearts + email pledge (no payment processor connected yet)
+    var wrap = document.getElementById('donate-cta-wrap');
+    var feedback = document.getElementById('donate-feedback');
+    document.getElementById('donate-submit').addEventListener('click', function () {
+        var first = document.getElementById('donor-first').value.trim();
+        var email = document.getElementById('donor-email').value.trim();
+        if (!first || !email || email.indexOf('@') < 1) {
+            feedback.textContent = 'Please fill in your first name and a valid email so we can complete your donation.';
+            feedback.classList.remove('hidden', 'text-tertiary');
+            feedback.classList.add('text-error');
+            return;
+        }
+        for (var i = 0; i < 10; i++) {
+            var h = document.createElement('span');
+            h.className = 'material-symbols-outlined yj-float-heart';
+            h.textContent = 'favorite';
+            h.style.left = (10 + Math.random() * 80) + '%';
+            h.style.top = '0px';
+            h.style.animationDelay = (Math.random() * 0.5) + 's';
+            h.style.fontVariationSettings = "'FILL' 1";
+            wrap.appendChild(h);
+            setTimeout(function (el) { el.remove(); }.bind(null, h), 2200);
+        }
+        feedback.textContent = 'Thank you, ' + first + '! Your ' + fmt(state.amount) + (state.freq === 'monthly' ? ' monthly' : '') + ' pledge means the world. We\u2019ve opened an email for you to send \u2014 our team will confirm your ' + (state.method === 'card' ? 'card payment link' : 'bank transfer details') + ' right away.';
+        feedback.classList.remove('hidden', 'text-error');
+        feedback.classList.add('text-tertiary');
+        var last = document.getElementById('donor-last').value.trim();
+        var phone = document.getElementById('donor-phone').value.trim();
+        var body = 'Hello Yanju Foundation,%0D%0A%0D%0AI would like to donate ' + encodeURIComponent(fmt(state.amount)) + (state.freq === 'monthly' ? ' every month' : ' (one-time)') + ' via ' + (state.method === 'card' ? 'debit/credit card' : 'bank transfer') + '.%0D%0A%0D%0AName: ' + encodeURIComponent(first + ' ' + last) + '%0D%0AEmail: ' + encodeURIComponent(email) + (phone ? '%0D%0APhone: ' + encodeURIComponent(phone) : '') + '%0D%0A%0D%0APlease send me the details to complete my donation.%0D%0A%0D%0AThank you!';
+        window.location.href = 'mailto:yanjufoundation@gmail.com?subject=' + encodeURIComponent('Donation pledge \u2014 ' + fmt(state.amount)) + '&body=' + body;
+    });
+
+    render();
+})();
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Volunteer | Yanju Foundation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#002116",
+                    "primary-fixed": "#ffdcc3",
+                    "surface-container-low": "#fff1eb",
+                    "tertiary": "#065f46",
+                    "on-background": "#451a03",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#fff8f6",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#d97706",
+                    "primary-container": "#b45309",
+                    "background": "#fff8f6",
+                    "inverse-on-surface": "#ffede6",
+                    "on-secondary-fixed": "#390c00",
+                    "surface-bright": "#fff8f6",
+                    "inverse-surface": "#51230a",
+                    "on-secondary-fixed-variant": "#832600",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#ffd0bc",
+                    "surface-container-high": "#ffe2d7",
+                    "on-surface-variant": "#554336",
+                    "tertiary-fixed-dim": "#8bd6b6",
+                    "on-error": "#ffffff",
+                    "outline": "#887364",
+                    "on-tertiary-fixed-variant": "#00513b",
+                    "on-tertiary-container": "#f5fff8",
+                    "surface-container-highest": "#ffdbcc",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "on-primary-container": "#fffbff",
+                    "surface-container": "#ffeae1",
+                    "on-secondary-container": "#5d1900",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#ffb77d",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#ffb77d",
+                    "secondary": "#c2410c",
+                    "tertiary-fixed": "#a6f2d1",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#ffdbcc",
+                    "secondary-fixed": "#ffdbd0",
+                    "outline-variant": "#dbc2b0",
+                    "on-surface": "#451a03",
+                    "secondary-container": "#fd6b36",
+                    "surface-tint": "#d97706",
+                    "on-primary-fixed": "#2f1500",
+                    "tertiary-container": "#047857",
+                    "secondary-fixed-dim": "#ffb59d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "stack-sm": "16px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "stack-md": "32px",
+                    "stack-lg": "80px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .ambient-shadow {
+        box-shadow: 0 20px 40px -10px rgba(69, 26, 3, 0.12);
+      }
+      .hover-lift {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .hover-lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 50px -12px rgba(69, 26, 3, 0.18);
+      }
+    </style>
+<link href="assets/enhance.css?v=4" rel="stylesheet">
+<script defer src="assets/enhance.js?v=4"></script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="docked full-width top-0 sticky z-50 shadow-sm bg-surface dark:bg-inverse-surface">
+<nav class="flex justify-between items-center px-gutter w-full max-w-container-max mx-auto py-6">
+<div class="flex items-center"><img src="assets/logo.png" alt="Yanju Foundation Logo" class="w-auto object-contain transition-all " style="height: 190px; "></div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="index.html">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="about.html">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="programs.html">Programs</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="gallery.html">Gallery</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="success-stories.html">Success Stories</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="volunteer.html">Volunteer</a>
+</div>
+<div class="flex items-center space-x-4">
+<a href="faq.html" class="hidden md:block font-label-md text-label-md px-6 py-2 border-2 border-secondary text-secondary rounded-full hover:bg-secondary hover:text-white transition-all" style="text-align:center">Contact</a>
+<a href="donate.html" class="font-label-md text-label-md px-6 py-2 bg-primary text-white rounded-full shadow-md hover:scale-95 duration-150" style="text-align:center">Donate</a>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative py-stack-lg px-gutter overflow-hidden">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-md items-center">
+<div class="z-10">
+<span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-label-md text-label-md mb-stack-sm">Be the Change</span>
+<h1 class="font-display-lg text-display-lg mb-6 leading-tight">Empower Minds, Transform Lives</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl mb-8">
+                        Join our community of passionate mentors and educators. Your skills can bridge the gap for students in underserved communities across Nigeria.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary text-white px-8 py-4 rounded-full font-label-md text-label-md ambient-shadow hover-lift" href="#signup">Apply to Volunteer</a>
+<a class="flex items-center gap-2 font-label-md text-label-md text-secondary px-8 py-4" href="#how-it-works">
+                            Learn How <span class="material-symbols-outlined">arrow_downward</span>
+</a>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-[40px] overflow-hidden ambient-shadow rotate-3 hover:rotate-0 transition-transform duration-500">
+<img class="w-full h-full object-cover" data-alt="A heart-warming, high-resolution photograph of a diverse group of young adult mentors laughing and collaborating with elementary school students in a brightly lit, modern classroom. The setting features warm sunlight streaming through large windows, highlighting a palette of soft terracottas and amber golds. The mood is aspirational and professional, capturing a moment of genuine human connection and mentorship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpi2BxYo1hp62lUJNJ2F4rs9SGzIK3LycNPR868KKx-mz8dZ7w6uZ85sYhdjjhaSqrHfk2kvRKhmPb44PWWSQsDMoqF6TUyoIlcL3DDpQgTGVT9iUlvB5Q-LdUPdCY9qlKs-LSsm7x44ClxVrjk6fs7eSbqNTfmmhGaxYdw7H5qwks_MILfLLCz2vHWcv9fm2odfc2p1A1u2eTnYAFrx-S8hv-Q6CuylaTh4D6sCvbt-FLEQ2JoWN4Cg">
+</div>
+<div class="absolute -bottom-10 -left-10 bg-tertiary-container text-white p-8 rounded-3xl ambient-shadow hidden md:block">
+<p class="font-headline-md text-headline-md mb-2">500+</p>
+<p class="font-label-md text-label-md opacity-90">Active Volunteers</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Explainer Section: How to Help -->
+<section class="py-stack-lg bg-surface-container-low px-gutter" id="how-it-works">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg mb-4">How You Can Make an Impact</h2>
+<p class="text-on-surface-variant font-body-md max-w-2xl mx-auto">We offer diverse pathways for you to contribute your expertise. Whether you have an hour a week or a day a month, your presence matters.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Mentoring -->
+<div class="bg-white p-8 rounded-[16px] ambient-shadow hover-lift group">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white text-3xl">psychology</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Mentorship</h3>
+<p class="text-on-surface-variant font-body-md mb-6">Guide a student through their career journey, offering professional advice, life coaching, and networking opportunities.</p>
+<ul class="space-y-3 font-label-md text-label-md text-on-surface">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> 1-on-1 Sessions</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> Career Roadmap Planning</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> Soft Skills Training</li>
+</ul>
+</div>
+<!-- Teaching -->
+<div class="bg-white p-8 rounded-[16px] ambient-shadow hover-lift group">
+<div class="w-16 h-16 rounded-2xl bg-tertiary/10 flex items-center justify-center mb-6 group-hover:bg-tertiary transition-colors">
+<span class="material-symbols-outlined text-tertiary group-hover:text-white text-3xl">school</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Teaching &amp; STEM</h3>
+<p class="text-on-surface-variant font-body-md mb-6">Support our weekend academies by teaching core subjects or facilitating hands-on science and technology workshops.</p>
+<ul class="space-y-3 font-label-md text-label-md text-on-surface">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> Coding Workshops</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> Mathematics Coaching</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> Literacy Programs</li>
+</ul>
+</div>
+<!-- Skills -->
+<div class="bg-white p-8 rounded-[16px] ambient-shadow hover-lift group">
+<div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-white text-3xl">handyman</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Skill Sharing</h3>
+<p class="text-on-surface-variant font-body-md mb-6">Have a unique skill? From photography to financial literacy, share your professional expertise in focused masterclasses.</p>
+<ul class="space-y-3 font-label-md text-label-md text-on-surface">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> Creative Arts</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> Business Fundamentals</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> Digital Marketing</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Join? Benefits -->
+<section class="py-stack-lg px-gutter max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+<div class="relative grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-12">
+<div class="h-64 rounded-2xl overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="A vibrant, candid shot of a volunteer mentor showing a laptop screen to a group of engaged teenagers. The volunteer is smiling warmly, and the setting is a modern community center with wooden textures and plants. The lighting is golden hour warm, emphasizing the community-driven feel of the Yanju Foundation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKm0y66PtGlq4ot1ypmMrGIyQva7JVTJqqczRdHFFnPFP5PzBAA5jbtMFobS7x8BKWonkDlZr0nMuUi9fRGnqosaiVtjUjiAtn_ygP-mRRvybGqk9IIEMEo10FK8v_vtwtOsXOemYcZYUf4OH1rrlrbQ7umMg_tqXXDR2HHDKUmNJPyEBL-tMXxA0o8u-XGYKUc8DgwIHj-igKjSejFMr4XZde8xTM2yVGxV3chu1SYey2QioGUMK_YA">
+</div>
+<div class="h-48 rounded-2xl overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of hands working together to solve a puzzle or build a small robot. One hand belongs to an adult mentor and the other to a child. The focus is sharp on the collaboration, with a shallow depth of field. Colors are rich with terracotta and deep green accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjyqZ4jG8Rnk2UMN_JA9JR5ZCX5pH5W2IyUyyN_YR6fyxD4B3H-oJP9KANRSUhE63TZ5fOJFWtCgQDUubnK6A8nrnhCaTsnKlIFFY8AlDc9rPxBXPLwankLY3DZWL4kMSR9q1sBqK2uuc4bPmrdAOvzmFbKVVQSvHyWS3WhWPYZdtP_17Trgoinfm782-7BeAEIR03lwshvRW_Ax5FBV276ckuLUi-H-FxMz8WJT-4C4q6LOuwzWHfiw">
+</div>
+</div>
+<div class="space-y-4">
+<div class="h-48 rounded-2xl overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="A professional group portrait of volunteers from diverse backgrounds standing together in front of a Yanju Foundation banner. They are wearing matching terracotta t-shirts and look proud and hopeful. The scene is bright and optimistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzs42kwX4srphG0p4AyWsO0UYrQZ3j7owikcmhqPpfDSzbfiwi9UJqC2W3K0ZwWo3dIwjgaPQvWQ6QLGZoGNyOCAAoaSbMx4BGuO7dPaGgwYyJw34qU9WdlzUdtcfPtLPYidh9-b1wzGAu5obXUGYkLbs72GuWSEP12_3GC-Nf6_2gJ_vT9HVGViMteBMsbHN-5RE-2Ropf3lmJC5UngqEo3VNke3HhgSJhd5Ur7UgRiBEgob3_tQMqg">
+</div>
+<div class="h-64 rounded-2xl overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="An outdoor scene where a volunteer is teaching a group of children under a large, shaded tree. The setting is rural but tidy and welcoming. The children are attentive and holding notebooks. The light is soft and natural." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAkd5B0q8MglWCQ-vQIUtW4dqAb0e4eq7PphsiC6ETtNmhBNd8vN_KYee23Obh2badRlOjgmm4X-yVfXOrQPlkPrFH_1tzf-vkgsmmXT44DJVgBBuWQv_zoGxX2b1iZstcoK3h4pIvVdtDzOGedO7l4jaf-KEy9sE5r-yv7R-9rAlAVbKbAY3dsj6U93cXgWExb3eiLPnYRwmikKdkiCp5jFLk5X3yB0b_DhiAy2n6sB4y5iey4UiZrw">
+</div>
+</div>
+</div>
+<div class="pl-0 lg:pl-12">
+<h2 class="font-headline-lg text-headline-lg mb-8">Why Join Our Community?</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined">volunteer_activism</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold mb-1">Make a Tangible Difference</h4>
+<p class="text-on-surface-variant">See the direct results of your effort as students gain confidence and academic success.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold mb-1">Expand Your Network</h4>
+<p class="text-on-surface-variant">Connect with like-minded professionals and leaders across various industries.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold mb-1">Personal Growth</h4>
+<p class="text-on-surface-variant">Enhance your leadership, communication, and teaching skills through our training sessions.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold mb-1">Official Recognition</h4>
+<p class="text-on-surface-variant">Receive certificates of appreciation and recommendations for your professional portfolio.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sign-up Form Section -->
+<section class="py-stack-lg px-gutter relative" id="signup">
+<div class="absolute inset-0 bg-primary opacity-[0.03] pointer-events-none"></div>
+<div class="max-w-3xl mx-auto bg-white rounded-[24px] ambient-shadow p-8 md:p-12 relative z-10 border border-surface-container-high">
+<div class="text-center mb-10">
+<h2 class="font-headline-lg text-headline-lg mb-2">Volunteer Application</h2>
+<p class="text-on-surface-variant font-body-md">Fill out the form below and our team will get back to you within 48 hours.</p>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface px-1">Full Name</label>
+<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="John Doe" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface px-1">Email Address</label>
+<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="john@example.com" type="email">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface px-1">Phone Number</label>
+<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="+234..." type="tel">
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface px-1">Area of Interest</label>
+<select class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none appearance-none bg-white">
+<option disabled="" selected="" value="">Select an area</option>
+<option>Mentorship</option>
+<option>STEM Education</option>
+<option>Skill Sharing</option>
+<option>Event Planning</option>
+<option>Administrative Support</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface px-1">Weekly Availability</label>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<label class="flex items-center gap-2 p-4 border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-5 h-5 text-primary border-outline-variant rounded focus:ring-primary" type="checkbox">
+<span class="font-label-md">Weekday AM</span>
+</label>
+<label class="flex items-center gap-2 p-4 border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-5 h-5 text-primary border-outline-variant rounded focus:ring-primary" type="checkbox">
+<span class="font-label-md">Weekday PM</span>
+</label>
+<label class="flex items-center gap-2 p-4 border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-5 h-5 text-primary border-outline-variant rounded focus:ring-primary" type="checkbox">
+<span class="font-label-md">Weekends</span>
+</label>
+<label class="flex items-center gap-2 p-4 border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-5 h-5 text-primary border-outline-variant rounded focus:ring-primary" type="checkbox">
+<span class="font-label-md">Remote Only</span>
+</label>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface px-1">Briefly describe your relevant experience</label>
+<textarea class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none" placeholder="Tell us why you'd like to join..." rows="4"></textarea>
+</div>
+<button class="w-full py-5 bg-primary text-white font-label-md text-label-md rounded-full shadow-lg hover:scale-[0.98] transition-all flex items-center justify-center gap-2" type="submit">
+                        Submit Application
+                        <span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</div>
+</section>
+<!-- Newsletter / Community CTA -->
+<section class="py-stack-lg px-gutter">
+<div class="max-w-container-max mx-auto bg-tertiary rounded-[32px] p-8 md:p-16 text-white text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-48 h-48 bg-secondary/20 rounded-full -ml-24 -mb-24"></div>
+<h2 class="font-headline-lg text-headline-lg mb-6 relative z-10">Not ready to volunteer?</h2>
+<p class="font-body-lg text-body-lg mb-10 max-w-xl mx-auto opacity-90 relative z-10">Stay updated with our latest news, program successes, and future opportunities to help. Join our community newsletter.</p>
+<div class="max-w-md mx-auto flex flex-col md:flex-row gap-4 relative z-10">
+<input class="flex-grow px-6 py-4 rounded-full bg-white/20 border border-white/30 text-white placeholder:text-white/60 focus:bg-white/30 outline-none backdrop-blur-sm" placeholder="Your email address" type="email">
+<button class="bg-white text-tertiary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container transition-colors">Subscribe</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="full-width bg-surface-container-highest dark:bg-on-tertiary-fixed text-on-surface-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-md px-gutter py-stack-lg w-full max-w-container-max mx-auto pt-12">
+<div class="col-span-1 md:col-span-1">
+<div class="mb-6 mb-8"><img src="assets/logo.png" alt="Yanju Foundation Logo" class="w-auto object-contain " style="height: 190px; "></div>
+<p class="font-body-md text-body-md mb-6">Nurturing excellence through educational support, vocational training, and life-changing mentorship.</p>
+<div class="flex space-x-4">
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="https://www.instagram.com/yanjufoundation" target="_blank" rel="noopener">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="https://www.instagram.com/yanjufoundation" target="_blank" rel="noopener">
+<span class="material-symbols-outlined text-xl">camera</span>
+</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Quick Links</h4>
+<ul class="space-y-2">
+<li class=""><a class="font-label-md text-label-md hover:text-secondary transition-colors duration-200" href="index.html">Home</a></li>
+<li class=""><a class="font-label-md text-label-md hover:text-secondary transition-colors duration-200" href="about.html">About</a></li>
+<li class=""><a class="font-label-md text-label-md hover:text-secondary transition-colors duration-200" href="programs.html">Programs</a></li>
+<li class=""><a class="font-label-md text-label-md hover:text-secondary transition-colors duration-200" href="gallery.html">Gallery</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Resources</h4>
+<ul class="space-y-2">
+<li class=""><a class="font-label-md text-label-md hover:text-secondary transition-colors duration-200" href="success-stories.html">Success Stories</a></li>
+<li class=""><a class="font-label-md text-label-md hover:text-secondary transition-colors duration-200 text-primary dark:text-primary-fixed font-semibold" href="volunteer.html">Volunteer</a></li>
+<li class=""><a class="font-label-md text-label-md hover:text-secondary transition-colors duration-200" href="success-stories.html">Blog</a></li>
+<li class=""><a class="font-label-md text-label-md hover:text-secondary transition-colors duration-200" href="faq.html">Contact</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Contact Us</h4>
+<p class="font-body-md text-body-md">Lagos, Nigeria</p>
+<p class="font-body-md text-body-md">yanjufoundation@gmail.com</p>
+<p class="font-body-md text-body-md">+234 704 744 4628</p>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 py-8 px-gutter">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-md text-label-md text-center md:text-left">© 2024 Yanju Foundation. Registered with CAC. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="font-label-md text-label-md hover:text-secondary" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md hover:text-secondary" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+<div class="yj-footer-contact">
+<a href="https://www.instagram.com/yanjufoundation" target="_blank" rel="noopener"><span class="material-symbols-outlined">photo_camera</span>Instagram: @yanjufoundation</a>
+<a href="mailto:yanjufoundation@gmail.com"><span class="material-symbols-outlined">mail</span>yanjufoundation@gmail.com</a>
+<a href="tel:+2347047444628"><span class="material-symbols-outlined">call</span>+234 704 744 4628</a>
+</div>
+</footer>
+<script>
+        // Simple form interaction
+        document.querySelector('form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Sending Application...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = 'Application Sent! <span class="material-symbols-outlined">check_circle</span>';
+                btn.classList.replace('bg-primary', 'bg-tertiary');
+                e.target.reset();
+            }, 1500);
+        });
+
+        // Sticky Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

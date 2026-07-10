@@ -1,0 +1,338 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Our Programs | Yanju Foundation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pillar-card:hover .pillar-image {
+            transform: scale(1.05);
+        }
+        .warm-gradient-overlay {
+            background: linear-gradient(to bottom, rgba(255, 248, 246, 0) 0%, rgba(255, 248, 246, 0.8) 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#002116",
+                        "primary-fixed": "#ffdcc3",
+                        "surface-container-low": "#fff1eb",
+                        "tertiary": "#065f46",
+                        "on-background": "#451a03",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fff8f6",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#d97706",
+                        "primary-container": "#b45309",
+                        "background": "#fff8f6",
+                        "inverse-on-surface": "#ffede6",
+                        "on-secondary-fixed": "#390c00",
+                        "surface-bright": "#fff8f6",
+                        "inverse-surface": "#51230a",
+                        "on-secondary-fixed-variant": "#832600",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#ffd0bc",
+                        "surface-container-high": "#ffe2d7",
+                        "on-surface-variant": "#554336",
+                        "tertiary-fixed-dim": "#8bd6b6",
+                        "on-error": "#ffffff",
+                        "outline": "#887364",
+                        "on-tertiary-fixed-variant": "#00513b",
+                        "on-tertiary-container": "#f5fff8",
+                        "surface-container-highest": "#ffdbcc",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-primary-container": "#fffbff",
+                        "surface-container": "#ffeae1",
+                        "on-secondary-container": "#5d1900",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ffb77d",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#ffb77d",
+                        "secondary": "#c2410c",
+                        "tertiary-fixed": "#a6f2d1",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#ffdbcc",
+                        "secondary-fixed": "#ffdbd0",
+                        "outline-variant": "#dbc2b0",
+                        "on-surface": "#451a03",
+                        "secondary-container": "#fd6b36",
+                        "surface-tint": "#d97706",
+                        "on-primary-fixed": "#2f1500",
+                        "tertiary-container": "#047857",
+                        "secondary-fixed-dim": "#ffb59d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "stack-sm": "16px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "stack-md": "32px",
+                        "stack-lg": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<link href="assets/enhance.css?v=4" rel="stylesheet">
+<script defer src="assets/enhance.js?v=4"></script>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="docked full-width top-0 sticky z-50 shadow-sm bg-surface dark:bg-inverse-surface">
+<nav class="flex justify-between items-center px-gutter py-4 w-full max-w-container-max mx-auto">
+<a href="index.html" class="block transition-transform hover:scale-105 duration-200 h-32" style="height: 190px;"><img src="assets/logo.png" alt="Yanju Foundation Logo" class="w-auto object-contain " style="height: 190px; "></a>
+<div class="hidden md:flex items-center gap-stack-md">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="index.html">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="about.html">About</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1 transition-colors duration-200" href="programs.html">Programs</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="gallery.html">Gallery</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="success-stories.html">Success Stories</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="volunteer.html">Volunteer</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="faq.html" class="hidden md:block font-label-md text-label-md text-primary px-4 py-2 rounded-full border-2 border-primary hover:bg-primary-fixed transition-all active:scale-95 duration-150" style="text-align:center">Contact</a>
+<a href="donate.html" class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all active:scale-95 duration-150" style="text-align:center">Donate</a>
+<button class="md:hidden p-2 text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-stack-lg pb-stack-md px-gutter">
+<div class="max-w-container-max mx-auto text-center transition-all duration-1000 opacity-100 translate-y-0">
+<span class="inline-block font-label-md text-label-md text-primary mb-4 tracking-widest uppercase">Our Impact Pillars</span>
+<h1 class="font-display-lg text-display-lg mb-6 max-w-3xl mx-auto leading-tight">Empowering Generations Through <span class="text-secondary">Intentional Growth</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">We focus on holistic development, moving beyond temporary relief to sustainable transformation for students and communities across the region.</p>
+</div>
+</section>
+<!-- Programs Pillar 1: Educational Support -->
+<section class="py-stack-lg px-gutter bg-surface">
+<div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-stack-lg items-center transition-all duration-1000 opacity-100 translate-y-0">
+<div class="order-2 md:order-1 relative group overflow-hidden rounded-xl shadow-[0_20px_40px_-10px_rgba(69,26,3,0.12)]">
+<img class="pillar-image w-full aspect-[4/5] object-cover transition-transform duration-700" data-alt="A candid, warm-toned photograph of several African students in neat uniforms sitting in a sunlit classroom. They are focused on their textbooks with a mentor leaning over to guide one student. The atmosphere is quiet, academic, and hopeful, reflecting a high-end educational environment with soft golden hour light filtering through the windows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAER7jZVMaqF3u0osd5sjg6CDA0K7n4wkaQTFeshzAUZuS8fsIKpwnnDsqTYD-ioARvH3yo4xJueIBVJXYBNGmMDO0-e54zww_ZuVt_SgdhRMEV1FVGhoYLAiKArMwty4UXnU67HGLfqlJFFeoK7rosgLavYvVNnCHadgBxdFJNSBFlWazi90S3_UcwSMGlAUqLU8RrLK-9BKWDSsZaZURCON5cQhDesz6UUhq-wq4alKotWIKa60fWwg">
+<div class="absolute inset-0 warm-gradient-overlay opacity-20"></div>
+</div>
+<div class="order-1 md:order-2 space-y-stack-sm">
+<div class="w-16 h-16 bg-primary-fixed rounded-2xl flex items-center justify-center text-primary mb-stack-sm">
+<span class="material-symbols-outlined text-4xl" data-icon="school">school</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg">Educational Support</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Education is the cornerstone of dignity. We provide comprehensive financial assistance covering school fees, textbooks, and academic supplies for high-potential students in underserved communities.
+                    </p>
+<ul class="space-y-4 py-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Full and partial scholarship grants</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">School uniform and supply distribution</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">After-school academic tutoring sessions</span>
+</li>
+</ul>
+<div class="flex gap-stack-sm pt-4">
+<a class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md shadow-lg hover:bg-primary-container transition-all" href="programs.html">Learn More</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md hover:text-primary-container hover:border-primary-container transition-all" href="sponsor.html">Sponsor a Student</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Programs Pillar 2: Purpose Development -->
+<section class="py-stack-lg px-gutter bg-surface-container-low">
+<div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-stack-lg items-center transition-all duration-1000 opacity-100 translate-y-0">
+<div class="space-y-stack-sm">
+<div class="w-16 h-16 bg-secondary-fixed rounded-2xl flex items-center justify-center text-secondary mb-stack-sm">
+<span class="material-symbols-outlined text-4xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg">Purpose Development</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Our flagship "Purpose Journey" program helps young individuals discover their innate talents and align them with career goals. Through mentorship, we turn ambition into a roadmap for life.
+                    </p>
+<div class="bg-surface p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="format_quote">format_quote</span>
+<p class="italic text-on-surface-variant font-body-md">"The mentorship program didn't just give me a tutor; it gave me a vision for who I could become." — Amina, Cohort '23</p>
+</div>
+</div>
+<div class="flex gap-stack-sm pt-4">
+<a class="bg-secondary text-on-secondary px-8 py-3 rounded-full font-label-md shadow-lg hover:opacity-90 transition-all" href="#">The Purpose Journey</a>
+<a class="text-secondary border-b-2 border-secondary pb-1 font-label-md hover:opacity-70 transition-all" href="volunteer.html">Become a Mentor</a>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-xl shadow-[0_20px_40px_-10px_rgba(69,26,3,0.12)]">
+<img class="pillar-image w-full aspect-[4/5] object-cover transition-transform duration-700" data-alt="A powerful, professional portrait of a young adult mentor and a teen mentee standing outdoors under a large acacia tree during a warm afternoon. They are looking at a tablet together, both smiling with a sense of accomplishment and shared purpose. The lighting is golden and soft, emphasizing textures of nature and clean professional clothing. Modern African aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCse1ME37k3dHBXTLx9ioWe7zQ1wKS29FhLX755PlKHuOh-BKiI8Z7fhLXii8f8jcZFsQlnUCE8JLnNm2-r5mVtQ34ZZwCKKMIHxl4oyNomZlb4lbUTFRjQ1g5DGagl3LbA0qNlCgusQP5LORKA3zjh_VE-56sozHMGrv08GRHTNLCjzzrVLoRpzwnTZYOCgiZVgAmpCYBiWCA1yPGUkBxdEzLlGSQkke_an8ZGpYXi-cdsci85-bbpFA">
+<div class="absolute inset-0 warm-gradient-overlay opacity-10"></div>
+</div>
+</div>
+</section>
+<!-- Programs Pillar 3: Community Outreach -->
+<section class="py-stack-lg px-gutter bg-surface">
+<div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-stack-lg items-center transition-all duration-1000 opacity-100 translate-y-0">
+<div class="order-2 md:order-1 relative group overflow-hidden rounded-xl shadow-[0_20px_40px_-10px_rgba(69,26,3,0.12)]">
+<img class="pillar-image w-full aspect-[4/5] object-cover transition-transform duration-700" data-alt="A wide-angle, high-resolution shot of a community gathering organized by a foundation. A group of local women and youth are gathered in a vibrant, clean community center with colorful murals. They are participating in a workshop, some taking notes and others engaged in group discussion. The atmosphere is energetic, collaborative, and professional, bathed in natural bright light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8CgHq2Ze3vPEA7NGvXwjzwTPnr8QRt7hz_x2pQ4wrZU-O8hidM8oBfPvnLTVRA9l5bhx8trhBdFjhHSyCQ3tSBEUudyiMKKzFAhQWCc48EVU0Ys35_7aVNmSPPPMRU_IM3oqWSC2A_yuqfxkTUiK2rikfnvF3ioUCD4sEHYI-Z83O3k7BTU8ZI7J83oJVrcAiENNzJQLjvUnwNiOoOcLFyIXpZygN2kLoyVkOzgskopKNfkBkwD7tPA">
+<div class="absolute inset-0 warm-gradient-overlay opacity-20"></div>
+</div>
+<div class="order-1 md:order-2 space-y-stack-sm">
+<div class="w-16 h-16 bg-tertiary-fixed rounded-2xl flex items-center justify-center text-tertiary mb-stack-sm">
+<span class="material-symbols-outlined text-4xl" data-icon="groups">groups</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg">Community Outreach</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        True change happens at the grassroots level. We conduct monthly empowerment workshops, health awareness campaigns, and family support systems to ensure the student's ecosystem is thriving.
+                    </p>
+<div class="grid grid-cols-2 gap-4 py-4">
+<div class="p-4 bg-surface-container rounded-lg">
+<span class="block font-bold text-tertiary text-2xl">500+</span>
+<span class="text-label-md text-on-surface-variant">Families Supported</span>
+</div>
+<div class="p-4 bg-surface-container rounded-lg">
+<span class="block font-bold text-tertiary text-2xl">12</span>
+<span class="text-label-md text-on-surface-variant">Annual Workshops</span>
+</div>
+</div>
+<div class="flex gap-stack-sm pt-4">
+<a class="bg-tertiary text-on-tertiary px-8 py-3 rounded-full font-label-md shadow-lg hover:bg-on-tertiary-fixed-variant transition-all" href="volunteer.html">Get Involved</a>
+<a class="text-tertiary border-b-2 border-tertiary pb-1 font-label-md hover:opacity-70 transition-all" href="gallery.html">Upcoming Events</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-stack-lg px-gutter">
+<div class="max-w-container-max mx-auto bg-primary rounded-3xl p-stack-md md:p-stack-lg relative overflow-hidden text-center text-on-primary transition-all duration-1000 opacity-100 translate-y-0">
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container rounded-full opacity-50 blur-3xl"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary rounded-full opacity-30 blur-3xl"></div>
+<h2 class="font-headline-lg text-headline-lg relative z-10 mb-6">Ready to make a lasting difference?</h2>
+<p class="font-body-lg text-body-lg relative z-10 mb-stack-md max-w-2xl mx-auto opacity-90">Join our community of donors and volunteers dedicated to creating a brighter future for every child.</p>
+<div class="relative z-10 flex flex-wrap justify-center gap-4">
+<a href="donate.html" class="bg-on-primary text-primary px-10 py-4 rounded-full font-bold shadow-2xl hover:bg-primary-fixed transition-all" style="text-align:center">Donate Now</a>
+<a href="volunteer.html" class="bg-transparent border-2 border-on-primary text-on-primary px-10 py-4 rounded-full font-bold hover:bg-on-primary/10 transition-all" style="text-align:center">Volunteer with Us</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-on-tertiary-fixed py-stack-lg px-gutter">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-stack-md">
+<div class="space-y-4">
+<a href="index.html" class="inline-block transition-transform hover:scale-105 duration-200 h-40 mb-6" style="height: 190px;"><img src="assets/logo.png" alt="Yanju Foundation Logo" class="w-auto object-contain " style="height: 190px; "></a>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant">Building a future where every child can discover and fulfill their divine purpose.</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li class=""><a class="inline-block transition-transform hover:scale-105 duration-200 h-40 mb-6" href="index.html">Home</a></li>
+<li class=""><a class="inline-block transition-transform hover:scale-105 duration-200 h-40 mb-6" href="about.html">About</a></li>
+<li class=""><a class="inline-block transition-transform hover:scale-105 duration-200 h-40 mb-6" href="programs.html">Programs</a></li>
+<li class=""><a class="inline-block transition-transform hover:scale-105 duration-200 h-40 mb-6" href="gallery.html">Gallery</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-6">Engagement</h4>
+<ul class="space-y-3">
+<li class=""><a class="inline-block transition-transform hover:scale-105 duration-200 h-40 mb-6" href="success-stories.html">Success Stories</a></li>
+<li class=""><a class="inline-block transition-transform hover:scale-105 duration-200 h-40 mb-6" href="volunteer.html">Volunteer</a></li>
+<li class=""><a class="inline-block transition-transform hover:scale-105 duration-200 h-40 mb-6" href="success-stories.html">Blog</a></li>
+<li class=""><a class="inline-block transition-transform hover:scale-105 duration-200 h-40 mb-6" href="faq.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-6">Connect</h4>
+<div class="flex gap-4 mb-6">
+<a class="inline-block transition-transform hover:scale-105 duration-200 h-40 mb-6" href="https://www.instagram.com/yanjufoundation" target="_blank" rel="noopener">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary-fixed transition-colors" href="mailto:yanjufoundation@gmail.com">
+<span class="material-symbols-outlined text-xl">mail</span>
+</a>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant">Lagos, Nigeria</p>
+<p class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant">yanjufoundation@gmail.com</p>
+</div>
+</div>
+<div class="max-w-container-max mx-auto border-t border-outline-variant mt-stack-md pt-8 text-center">
+<p class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant">© 2024 Yanju Foundation. Registered with CAC. All rights reserved.</p>
+</div>
+<div class="yj-footer-contact">
+<a href="https://www.instagram.com/yanjufoundation" target="_blank" rel="noopener"><span class="material-symbols-outlined">photo_camera</span>Instagram: @yanjufoundation</a>
+<a href="mailto:yanjufoundation@gmail.com"><span class="material-symbols-outlined">mail</span>yanjufoundation@gmail.com</a>
+<a href="tel:+2347047444628"><span class="material-symbols-outlined">call</span>+234 704 744 4628</a>
+</div>
+</footer>
+<script>
+        // Micro-interactions for scrolling reveals
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

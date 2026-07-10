@@ -1,0 +1,434 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>About Us | Yanju Foundation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#002116",
+                        "primary-fixed": "#ffdcc3",
+                        "surface-container-low": "#fff1eb",
+                        "tertiary": "#065f46",
+                        "on-background": "#451a03",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fff8f6",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#d97706",
+                        "primary-container": "#b45309",
+                        "background": "#fff8f6",
+                        "inverse-on-surface": "#ffede6",
+                        "on-secondary-fixed": "#390c00",
+                        "surface-bright": "#fff8f6",
+                        "inverse-surface": "#51230a",
+                        "on-secondary-fixed-variant": "#832600",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#ffd0bc",
+                        "surface-container-high": "#ffe2d7",
+                        "on-surface-variant": "#554336",
+                        "tertiary-fixed-dim": "#8bd6b6",
+                        "on-error": "#ffffff",
+                        "outline": "#887364",
+                        "on-tertiary-fixed-variant": "#00513b",
+                        "on-tertiary-container": "#f5fff8",
+                        "surface-container-highest": "#ffdbcc",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-primary-container": "#fffbff",
+                        "surface-container": "#ffeae1",
+                        "on-secondary-container": "#5d1900",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ffb77d",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#ffb77d",
+                        "secondary": "#c2410c",
+                        "tertiary-fixed": "#a6f2d1",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#ffdbcc",
+                        "secondary-fixed": "#ffdbd0",
+                        "outline-variant": "#dbc2b0",
+                        "on-surface": "#451a03",
+                        "secondary-container": "#fd6b36",
+                        "surface-tint": "#d97706",
+                        "on-primary-fixed": "#2f1500",
+                        "tertiary-container": "#047857",
+                        "secondary-fixed-dim": "#ffb59d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "stack-sm": "16px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "stack-md": "32px",
+                        "stack-lg": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 248, 246, 0.8);
+            backdrop-filter: blur(8px);
+        }
+        .ambient-shadow {
+            box-shadow: 0 20px 40px -10px rgba(69, 26, 3, 0.12);
+        }
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 30px 60px -12px rgba(69, 26, 3, 0.18);
+        }
+    </style>
+<link href="assets/enhance.css?v=4" rel="stylesheet">
+<script defer src="assets/enhance.js?v=4"></script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="docked full-width top-0 sticky z-50 shadow-sm bg-surface dark:bg-inverse-surface">
+<nav class="flex justify-between items-center px-gutter py-6 w-full max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight" href="index.html"><img src="assets/logo.png" alt="Yanju Foundation Logo" class="w-auto object-contain" style="height: 190px; width: auto; "></a>
+<div class="hidden md:flex items-center gap-stack-md">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html">Home</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="about.html">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="programs.html">Programs</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="gallery.html">Gallery</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="success-stories.html">Success Stories</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="volunteer.html">Volunteer</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="faq.html" class="hidden sm:inline-flex px-6 py-2 rounded-full border-2 border-primary text-primary font-label-md hover:bg-primary hover:text-white transition-all duration-300" style="text-align:center">Contact</a>
+<a href="donate.html" class="bg-primary text-white px-8 py-2 rounded-full font-label-md shadow-lg active:scale-95 duration-150 transition-all hover:bg-primary-container" style="text-align:center">Donate</a>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-stack-lg pb-stack-md px-gutter w-full max-w-container-max mx-auto overflow-hidden transition-all duration-700 opacity-100 translate-y-0">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-md items-center">
+<div class="z-10">
+<span class="text-tertiary font-label-md tracking-widest uppercase mb-4 block">Our Journey</span>
+<h1 class="font-display-lg text-display-lg md:text-display-lg mb-6 text-on-background leading-tight">Empowering Generations, Shaping Futures.</h1>
+<p class="text-body-lg text-on-surface-variant mb-8 max-w-xl">Founded on the belief that every individual deserves the tools to excel, Yanju Foundation has evolved from a grassroots initiative into a beacon of hope and excellence for communities across the region.</p>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-3xl overflow-hidden ambient-shadow rotate-3 scale-95 transition-transform duration-700 hover:rotate-0">
+<img class="w-full h-full object-cover" data-alt="A warm, cinematic photograph of a diverse group of young African students engaged in a collaborative learning session with a mentor. The lighting is golden and natural, filtering through large windows, creating an atmosphere of focus and aspiration. The setting is a modern, clean educational space with wooden accents, reflecting the brand's professional and compassionate heart." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALn9BmR6QIRgvLEwJiRgWy3Y3Lo4xhF8JUQH_RaHi5MscnjL-UD-W5niYO2Rv8oIstxw_0ye6abMk3arqtXtyuMFNuOIFcagFKz5k51qgsVxcOU7ntIOl_ZoxuhpP9t_nvOTtHaZvF2aHm4YgSikpgn_qckyQ1S21VRTgnlmuuGcP-QwbRrlFVpA-M24SryFNFmIJ9TiRc1tTA7NcdUGDZCcM1yaWAdOOz2gL3AVxuJweQRbRSjpTf1Q">
+</div>
+<div class="absolute -bottom-6 -left-6 bg-secondary-container p-8 rounded-2xl shadow-xl hidden md:block">
+<span class="text-white font-headline-lg block">10+</span>
+<span class="text-white font-label-md">Years of Impact</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Founding Story -->
+<section class="py-stack-lg bg-surface-container-low px-gutter transition-all duration-700 opacity-100 translate-y-0">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-md">
+<div class="lg:col-span-5">
+<div class="h-full min-h-[400px] rounded-2xl overflow-hidden ambient-shadow">
+<img class="w-full h-full object-cover" data-alt="A high-resolution candid portrait of a visionary leader in a vibrant sunset-lit outdoor setting. The person looks thoughtfully into the distance with a gentle smile, symbolizing wisdom and hope. The background is softly blurred, showing a hints of a developing community. The overall aesthetic is warm, earthy, and deeply human, aligning with the Yanju Foundation's core tenets." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXQeLcaAxizqFoCXv9EQq-AYgk6z4LG4O0Wa-YYnak1HSaMnQOT9OHrfrledjSjFJ9yd5CAxHVMaiOh-tk4WzOTeGW3tWvyzPd8zo7m_74wRCPDuaLB8CfQPui3PYcwW27uhmbbaeaZ61HYWUYhz57qBBKURjhFudcRMnK0oRmbeMiegxWKbdYQuuUVgoeTAijHn8KLqAAKN4lL__SwXfBPcZEU33k4L27GjEb32Uaa_WFG5k7_T4wpA">
+</div>
+</div>
+<div class="lg:col-span-7 flex flex-col justify-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Our Founding Story</h2>
+<div class="space-y-6 text-body-md text-on-surface-variant">
+<p class="">The Yanju Foundation began in 2014 with a simple observation: talent is universal, but opportunity is not. Our founder, driven by the personal experience of transformative mentorship, sought to bridge this gap by creating a structured ecosystem for growth.</p>
+<p class="">What started as a weekend workshop for ten students has blossomed into a multi-faceted organization registered with the CAC, dedicated to systemic empowerment through STEM, arts, and leadership training.</p>
+<p class="">Today, we stand as a testament to the power of community-driven change, proving that with the right investment in human dignity, we can cultivate a future of boundless potential.</p>
+</div>
+<div class="mt-8 flex gap-stack-sm">
+<div class="bg-surface p-4 rounded-xl shadow-sm border border-outline-variant flex-1">
+<span class="text-tertiary-container font-bold text-headline-md block">5k+</span>
+<span class="text-label-md">Students Reached</span>
+</div>
+<div class="bg-surface p-4 rounded-xl shadow-sm border border-outline-variant flex-1">
+<span class="text-tertiary-container font-bold text-headline-md block">20+</span>
+<span class="text-label-md">Strategic Partners</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission & Vision -->
+<section class="py-stack-lg px-gutter transition-all duration-700 opacity-100 translate-y-0">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div class="bg-primary-container p-12 rounded-[2rem] text-white ambient-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<span class="inline-block px-4 py-1 bg-white/20 rounded-full font-label-md mb-6">The Path</span>
+<h3 class="font-headline-lg text-headline-lg mb-6">Our Mission</h3>
+<p class="text-body-lg opacity-90 leading-relaxed">To nurture the innate potential of individuals within underserved communities through accessible education, innovative programs, and professional mentorship, fostering a legacy of self-reliance and social excellence.</p>
+</div>
+<div class="bg-tertiary-container p-12 rounded-[2rem] text-white ambient-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">visibility</span>
+</div>
+<span class="inline-block px-4 py-1 bg-white/20 rounded-full font-label-md mb-6">The Horizon</span>
+<h3 class="font-headline-lg text-headline-lg mb-6">Our Vision</h3>
+<p class="text-body-lg opacity-90 leading-relaxed">To be the leading catalyst for an empowered African continent where every child and young adult possesses the skills, confidence, and community support to dictate their own destiny and lead global change.</p>
+</div>
+</div>
+</section>
+<!-- Core Values Grid -->
+<section class="py-stack-lg bg-surface px-gutter overflow-hidden transition-all duration-700 opacity-100 translate-y-0">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Our Core Values</h2>
+<p class="text-body-md text-on-surface-variant max-w-2xl mx-auto">These pillars guide every decision we make, from our program development to our internal culture.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Value 1 -->
+<div class="bg-surface-container p-8 rounded-2xl hover-lift border border-transparent hover:border-primary/20">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<h4 class="font-headline-md text-[20px] mb-3">Compassion</h4>
+<p class="text-label-md text-on-surface-variant">Leading with empathy and heart in all our interactions.</p>
+</div>
+<!-- Value 2 -->
+<div class="bg-surface-container p-8 rounded-2xl hover-lift border border-transparent hover:border-primary/20">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary mb-6">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<h4 class="font-headline-md text-[20px] mb-3">Integrity</h4>
+<p class="text-label-md text-on-surface-variant">Upholding the highest standards of honesty and transparency.</p>
+</div>
+<!-- Value 3 -->
+<div class="bg-surface-container p-8 rounded-2xl hover-lift border border-transparent hover:border-primary/20">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary mb-6">
+<span class="material-symbols-outlined">star</span>
+</div>
+<h4 class="font-headline-md text-[20px] mb-3">Excellence</h4>
+<p class="text-label-md text-on-surface-variant">Striving for the highest quality in every program we deliver.</p>
+</div>
+<!-- Value 4 -->
+<div class="bg-surface-container p-8 rounded-2xl hover-lift border border-transparent hover:border-primary/20">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/10 flex items-center justify-center text-tertiary-container mb-6">
+<span class="material-symbols-outlined">handshake</span>
+</div>
+<h4 class="font-headline-md text-[20px] mb-3">Service</h4>
+<p class="text-label-md text-on-surface-variant">Dedicated to the self-sacrificial improvement of our community.</p>
+</div>
+<!-- Value 5 -->
+<div class="bg-surface-container p-8 rounded-2xl hover-lift border border-transparent hover:border-primary/20">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container mb-6">
+<span class="material-symbols-outlined">track_changes</span>
+</div>
+<h4 class="font-headline-md text-[20px] mb-3">Purpose</h4>
+<p class="text-label-md text-on-surface-variant">Driven by a clear intentionality to create lasting impact.</p>
+</div>
+<!-- Value 6 -->
+<div class="bg-surface-container p-8 rounded-2xl hover-lift border border-transparent hover:border-primary/20">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h4 class="font-headline-md text-[20px] mb-3">Education</h4>
+<p class="text-label-md text-on-surface-variant">Empowering through knowledge and lifelong learning curiosity.</p>
+</div>
+<!-- Value 7 -->
+<div class="bg-surface-container p-8 rounded-2xl hover-lift border border-transparent hover:border-primary/20 lg:col-span-2">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary mb-6">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<h4 class="font-headline-md text-[20px] mb-3">Community</h4>
+<p class="text-label-md text-on-surface-variant">Fostering a sense of belonging and collective growth for all stakeholders.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="py-stack-lg bg-surface-container-lowest px-gutter transition-all duration-700 opacity-100 translate-y-0">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Meet the Visionaries</h2>
+<p class="text-body-md text-on-surface-variant">A dedicated team of professionals, educators, and social advocates working tirelessly to fulfill our mission.</p>
+</div>
+<a href="volunteer.html" class="px-8 py-3 rounded-full border-2 border-secondary text-secondary font-label-md hover:bg-secondary hover:text-white transition-all" style="text-align:center">Join the Team</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md">
+<!-- Leader 1 -->
+<div class="group">
+<div class="relative rounded-2xl overflow-hidden ambient-shadow mb-6 aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional headshot of a female executive in her late 30s. She is wearing a smart terracotta-colored blazer, smiling warmly and confidently. The lighting is soft and studio-quality with a light cream background. The portrait exudes trust, intelligence, and approachability, fitting the 'Aspirational Empowerment' aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJCKqIlCp4EMvnWi4kh0WfroU_yesDP2IrRHj9lHkMHbbNFGdV4X0oVITips5lLltvXIil_y2-Pq8CT1RB4-k6pjhQYrN7960_Xga2e1P9qg08xBNvyh3QZFczVOu1pmklrxl9MWtrf15lSwVMyvXDarCMDFoJ4Y9jYYIFyz9NnhLO3f4GAYEJAv5WlgSvYoDWcOyPbrdXeHPbEV7PABLUdRXsG_J0C0EC7o0FAQ_Q3HZswMP4Br0x1w">
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-white cursor-pointer hover:text-primary-fixed">share</span>
+<span class="material-symbols-outlined text-white cursor-pointer hover:text-primary-fixed">mail</span>
+</div>
+</div>
+</div>
+<h5 class="font-headline-md text-[22px] mb-1">Dr. Amina Yusuf</h5>
+<p class="text-primary font-label-md mb-4">Founder &amp; Executive Director</p>
+<p class="text-body-md text-on-surface-variant line-clamp-3 italic">"True leadership is not about being in charge, but taking care of those in our charge."</p>
+</div>
+<!-- Leader 2 -->
+<div class="group">
+<div class="relative rounded-2xl overflow-hidden ambient-shadow mb-6 aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional headshot of a male leader in a modern workspace. He is dressed in a contemporary dark green polo, looking into the camera with an expression of focus and dedication. The lighting is bright and crisp, highlighting a clean, professional atmosphere. High-end photography style with soft focus on the office background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnR11CAUsVz_XBd2hVz3pndMCJVqeydN29FlOWy3XN8SxBDNBog-bUc5S30enmHC70gDwqUXdMupCgF9QQMbEV7JVcv4HtwLkliAhtk27MosV7vCvuYUgrv9r_YkQDf1AjCLm4bOGFBUN_twKVpksvWtXpLsaqphg3nyIJH0KyZjXEzO583aDbjzs12dKd_b_rCiMaTRBepEfQdCy5K_7A290Z5-D71-V-nti203DrLox5zROqOCBtjw">
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-white cursor-pointer hover:text-primary-fixed">share</span>
+<span class="material-symbols-outlined text-white cursor-pointer hover:text-primary-fixed">mail</span>
+</div>
+</div>
+</div>
+<h5 class="font-headline-md text-[22px] mb-1">Samuel Adeyemi</h5>
+<p class="text-primary font-label-md mb-4">Operations Manager</p>
+<p class="text-body-md text-on-surface-variant line-clamp-3 italic">"Efficiency in our processes allows us to maximize the heart in our programs."</p>
+</div>
+<!-- Leader 3 -->
+<div class="group">
+<div class="relative rounded-2xl overflow-hidden ambient-shadow mb-6 aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional headshot of an older female educator with a kind, grandmotherly face, wearing elegant traditional attire in warm gold tones. She has a bright, radiant smile. The setting is a library with soft wooden tones, emphasizing her role as an educational advisor. The image is warm, tactile, and highly professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCypW6fOk8wrIABRrnLu1jtOD7-VbcfxNnn3vl3K_-IX6V--wwMmZKym1qAhn1Oq4_gjdV3G7sjSlsy9RXffEUPCASBJSf7SML4yXP5DUdvUM81RjEvhLfthREMN92FATSRRIKilQhpIH30z5pJiwH7pto2AnTs6q7Gk893ZA8d36D8unUF8EcuDDFlm1NbzzZRjdsRRjf1ujF5c5cf7Vsm6Vr0ZhqowZPqsCpyH653-FcLxirYiLxhEw">
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-white cursor-pointer hover:text-primary-fixed">share</span>
+<span class="material-symbols-outlined text-white cursor-pointer hover:text-primary-fixed">mail</span>
+</div>
+</div>
+</div>
+<h5 class="font-headline-md text-[22px] mb-1">Oluchi Nwosu</h5>
+<p class="text-primary font-label-md mb-4">Head of Education</p>
+<p class="text-body-md text-on-surface-variant line-clamp-3 italic">"Education is the only tool that increases in value the more you share it."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-stack-lg px-gutter transition-all duration-700 opacity-100 translate-y-0">
+<div class="max-w-container-max mx-auto bg-surface-container-high rounded-[3rem] p-12 md:p-20 text-center ambient-shadow border border-white">
+<h2 class="font-display-lg text-display-lg md:text-display-lg text-on-background mb-6 max-w-3xl mx-auto">Be a part of our story of change.</h2>
+<p class="text-body-lg text-on-surface-variant mb-10 max-w-xl mx-auto">Whether through donation, volunteering, or partnership, your contribution fuels our mission to empower the next generation.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a href="donate.html" class="bg-primary text-white px-10 py-4 rounded-full font-bold shadow-xl hover:bg-primary-container transition-all hover:-translate-y-1" style="text-align:center">Donate Now</a>
+<a href="volunteer.html" class="bg-white text-primary px-10 py-4 rounded-full font-bold shadow-md border border-primary/20 hover:bg-primary/5 transition-all hover:-translate-y-1" style="text-align:center">Become a Volunteer</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-on-tertiary-fixed full-width">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-md px-gutter py-stack-lg w-full max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<img src="assets/logo.png" alt="Yanju Foundation Logo" class="w-auto object-contain mb-6" style="height: 190px; width: auto; ">
+<p class="text-body-md text-on-surface-variant max-w-xs">Building a legacy of empowerment, education, and excellence in every community we serve.</p>
+<div class="flex gap-4 mt-2">
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="https://www.instagram.com/yanjufoundation" target="_blank" rel="noopener"><span class="material-symbols-outlined">public</span></a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="https://www.instagram.com/yanjufoundation" target="_blank" rel="noopener"><span class="material-symbols-outlined">share</span></a>
+</div>
+</div>
+<div>
+<h6 class="font-label-md text-label-md text-primary font-semibold mb-6 uppercase tracking-wider">Quick Links</h6>
+<ul class="flex flex-col gap-3">
+<li class=""><a class="text-on-surface-variant hover:text-secondary transition-colors duration-200 font-body-md" href="index.html">Home</a></li>
+<li class=""><a class="text-primary dark:text-primary-fixed font-semibold font-body-md" href="about.html">About Us</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-secondary transition-colors duration-200 font-body-md" href="programs.html">Programs</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-secondary transition-colors duration-200 font-body-md" href="success-stories.html">Success Stories</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label-md text-label-md text-primary font-semibold mb-6 uppercase tracking-wider">Contact</h6>
+<ul class="flex flex-col gap-3 text-on-surface-variant font-body-md">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">mail</span> yanjufoundation@gmail.com</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">phone</span> +234 704 744 4628</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">location_on</span> Lagos, Nigeria</li>
+</ul>
+</div>
+<div>
+<h6 class="font-label-md text-label-md text-primary font-semibold mb-6 uppercase tracking-wider">Newsletter</h6>
+<p class="text-body-md text-on-surface-variant mb-4">Stay updated with our latest impact stories.</p>
+<div class="relative">
+<input class="w-full bg-surface border border-outline-variant rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" placeholder="Email Address" type="email">
+<button class="absolute right-2 top-1.5 bg-primary text-white p-1.5 rounded-lg hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant px-gutter py-6 text-center">
+<p class="font-label-md text-label-md text-on-surface-variant">© 2024 Yanju Foundation. Registered with CAC. All rights reserved.</p>
+</div>
+<div class="yj-footer-contact">
+<a href="https://www.instagram.com/yanjufoundation" target="_blank" rel="noopener"><span class="material-symbols-outlined">photo_camera</span>Instagram: @yanjufoundation</a>
+<a href="mailto:yanjufoundation@gmail.com"><span class="material-symbols-outlined">mail</span>yanjufoundation@gmail.com</a>
+<a href="tel:+2347047444628"><span class="material-symbols-outlined">call</span>+234 704 744 4628</a>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        // Apply to sections
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Sponsor a Child | Yanju Foundation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#ffeae1",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fff8f6",
+                        "on-tertiary-fixed-variant": "#00513b",
+                        "on-primary-fixed": "#2f1500",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fd6b36",
+                        "surface-tint": "#d97706",
+                        "secondary-fixed": "#ffdbd0",
+                        "primary-fixed": "#ffdcc3",
+                        "error-container": "#ffdad6",
+                        "surface": "#fff8f6",
+                        "on-secondary-fixed": "#390c00",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#fff1eb",
+                        "surface-dim": "#ffd0bc",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fff8f6",
+                        "surface-variant": "#ffdbcc",
+                        "on-surface-variant": "#554336",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#ffdbcc",
+                        "primary-container": "#b45309",
+                        "surface-container-high": "#ffe2d7",
+                        "on-secondary-container": "#5d1900",
+                        "tertiary-fixed": "#a6f2d1",
+                        "inverse-surface": "#51230a",
+                        "on-background": "#451a03",
+                        "outline-variant": "#dbc2b0",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#002116",
+                        "secondary": "#c2410c",
+                        "primary": "#d97706",
+                        "on-tertiary-container": "#f5fff8",
+                        "primary-fixed-dim": "#ffb77d",
+                        "tertiary-fixed-dim": "#8bd6b6",
+                        "outline": "#887364",
+                        "tertiary-container": "#047857",
+                        "secondary-fixed-dim": "#ffb59d",
+                        "inverse-on-surface": "#ffede6",
+                        "inverse-primary": "#ffb77d",
+                        "on-secondary-fixed-variant": "#832600",
+                        "on-primary-container": "#fffbff",
+                        "on-surface": "#451a03",
+                        "tertiary": "#065f46"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "stack-sm": "16px",
+                        "stack-lg": "80px",
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "stack-md": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ambient-shadow {
+            box-shadow: 0 20px 40px -10px rgba(69, 26, 3, 0.12);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px -12px rgba(69, 26, 3, 0.18);
+        }
+        .text-glow {
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+<link href="assets/enhance.css?v=4" rel="stylesheet">
+<script defer src="assets/enhance.js?v=4"></script>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto left-0 right-0 bg-background/80 backdrop-blur-md shadow-sm">
+<a href="index.html" class="block h-[190px]"><img src="assets/logo.png" alt="Yanju Foundation Logo" class="h-[190px] w-auto object-contain" style=""></a>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="programs.html">Programs</a>
+<a class="font-body-md text-body-md text-secondary border-b-2 border-secondary pb-1" href="sponsor.html">Sponsorship</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="success-stories.html">Impact</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a>
+</div>
+<a href="donate.html" class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md hover:opacity-90 transition-opacity" style="text-align:center">Donate Now</a>
+</nav>
+<main class="mt-32">
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex items-center overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center opacity-40 md:opacity-100 md:translate-x-1/4" data-alt="A dignified, heartwarming portrait of a young African boy in a clean school uniform, smiling brightly while holding colorful textbooks and a backpack. The lighting is warm and golden, suggesting a late afternoon sun, set against a blurred background of a modern, well-maintained village school. The overall aesthetic is aspirational, hopeful, and celebrates the dignity of education." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALAlMu97ki-I3yrz3E9LeXSCVT144YF1tmUJk5Q4uxjfXy3L1TOP7kM7VeLIj3-7QwUVOIBKlJHPXEolsTVTAN4P0BaQcLN6n6YVj8hM26SGfI8csB1MQhZ1PfCwwI6g3MMr3UZhFpkExxNhEhklYOx97QQ9_qmrMnqo_yghFdpR8jvkNmo0tre6yvTeEviHyeLmpCjxyxuEzQ3eSePK2MuPuYNli0IR_fjiZLs_gJzK-jV8qToyOMEw')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-low via-surface-container-low/80 to-transparent"></div>
+</div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="max-w-2xl">
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-on-background mb-stack-sm leading-tight">
+                        Change a Life, <br><span class="text-primary">One Child at a Time.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md">
+                        Your monthly sponsorship provides education, healthcare, and a community of support for a child in need. Empower a generation with the gift of hope.
+                    </p>
+<a class="inline-block bg-primary text-on-primary px-10 py-4 rounded-full font-label-md text-lg ambient-shadow hover:translate-y-[-2px] transition-all duration-300" href="#waiting-children">
+                        View Waiting Children
+                    </a>
+</div>
+</div>
+</section>
+<!-- How it Works Section -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">How it Works</h2>
+<div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="text-center p-stack-md bg-surface-container-lowest rounded-xl ambient-shadow">
+<div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mx-auto mb-stack-sm">
+<span class="material-symbols-outlined text-primary text-3xl">person_search</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">1. Choose a child</h3>
+<p class="text-on-surface-variant">Browse profiles and connect with a story that moves you. Every child has a unique dream.</p>
+</div>
+<div class="text-center p-stack-md bg-surface-container-lowest rounded-xl ambient-shadow">
+<div class="w-16 h-16 bg-secondary-fixed rounded-full flex items-center justify-center mx-auto mb-stack-sm">
+<span class="material-symbols-outlined text-secondary text-3xl">payments</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">2. Select a plan</h3>
+<p class="text-on-surface-variant">Choose a sponsorship tier that fits your commitment. Monthly payments directly fund essential needs.</p>
+</div>
+<div class="text-center p-stack-md bg-surface-container-lowest rounded-xl ambient-shadow">
+<div class="w-16 h-16 bg-tertiary-fixed rounded-full flex items-center justify-center mx-auto mb-stack-sm">
+<span class="material-symbols-outlined text-tertiary text-3xl">mail</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">3. Build a bond</h3>
+<p class="text-on-surface-variant">Receive updates, letters, and see the direct impact of your support as your sponsored child grows.</p>
+</div>
+</div>
+</section>
+<!-- Child Profile Grid -->
+<section class="py-stack-lg bg-surface-container-low px-margin-mobile md:px-margin-desktop" id="waiting-children">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-gutter">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-2">Meet the Children</h2>
+<p class="text-on-surface-variant font-body-lg">Waiting for a sponsor like you to help them achieve their dreams.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-white p-2 rounded-full border border-outline-variant hover:border-primary text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Profile Card 1 -->
+<div class="bg-white rounded-xl overflow-hidden ambient-shadow card-hover transition-all duration-300">
+<div class="h-64 relative overflow-hidden">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">New Profile</span>
+</div>
+<img class="w-full h-full object-cover" data-alt="A close-up portrait of a 7-year-old girl named Aisha with sparkling eyes and a warm smile. She is wearing a yellow school shirt and has small braids. The background is a soft-focus garden with lush greenery and hints of terracotta architecture. The image is bright, high-definition, and evokes a feeling of untapped potential and joy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8aE8_y7q2gWeZwkPhTKqoJdT1-ez_8TGrTy8mOn09JjScxgBd99AXEnTU2spnWf_rQyPBnhXMaYIIiIBmjU1mIEcw7j1dE9sE7wfmOfN7WtEsiOwkKbXXd5pZoep9KPHes1ZUtYoYXSVNVW6LUSQRlYtq6DFppSjpc6nNkBhYhpjvtxHtdCNHKLIgHx1VxSIQ4T7IsAb3mhrbdCXitBQvJYYDQxBHP6TGMLY1JGfNJIIPook5LpxSCg">
+</div>
+<div class="p-stack-sm">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md text-on-background">Aisha</h4>
+<span class="text-on-surface-variant font-label-md">7 yrs old</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Grade 2 • Wants to be a <strong>Doctor</strong></p>
+<a href="donate.html" class="w-full bg-primary text-on-primary py-3 rounded-full font-label-md hover:bg-primary-container transition-colors" style="text-align:center">Sponsor Me</a>
+</div>
+</div>
+<!-- Profile Card 2 -->
+<div class="bg-white rounded-xl overflow-hidden ambient-shadow card-hover transition-all duration-300">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of an 8-year-old boy named Koffi looking focused and hopeful. He is sitting at a wooden desk with a pencil in his hand. The lighting is soft and natural, emphasizing the rich textures of his skin and the school environment. The color palette features warm earth tones and soft whites, maintaining the Yanju Foundation aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxPJ70ZLb_WWeVXfm4GWtf-VD4uxslY2wDZDAt92VcKs_D9brR8wtenjVfUCviOYdI9EhHQI3hoc3jAbwB0ulnn46cvI73cvmn2HAju1BfvSI_BCsdH23x8JH6xy3Tig08ZKKEkN1IgTZk8Ln51MuNvjOVaK_WNNy-zrBQwjslaj0NtIAyDtrdZiRUew4VZ-F5zh3H14RAiy8w0gnoRaY6YO1J8gcYoh6leyRD_X6W1lz6QJl87p6fZQ">
+</div>
+<div class="p-stack-sm">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md text-on-background">Koffi</h4>
+<span class="text-on-surface-variant font-label-md">8 yrs old</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Grade 3 • Wants to be a <strong>Pilot</strong></p>
+<a href="donate.html" class="w-full bg-primary text-on-primary py-3 rounded-full font-label-md hover:bg-primary-container transition-colors" style="text-align:center">Sponsor Me</a>
+</div>
+</div>
+<!-- Profile Card 3 -->
+<div class="bg-white rounded-xl overflow-hidden ambient-shadow card-hover transition-all duration-300">
+<div class="h-64 relative overflow-hidden">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-tertiary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Needs Support</span>
+</div>
+<img class="w-full h-full object-cover" data-alt="A portrait of a 10-year-old girl named Fatima standing in front of a colorful mural at her school. She has a confident posture and a gentle smile. The image is sharp with a shallow depth of field, highlighting her expression against a vibrant yet soft-focus background of community life. Warm, sunny lighting reinforces the brand's optimistic tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ51Nz3kjY_ww6Syo2akF_eEYOR-mRhZtncjcTcoiRPH0gcPCCLRayeobNOdZwV3fwzsMv36ZCZnACavzVr3e8nfUErtc_HGpS0ha5mul9s6_1w8-GEX8Dufc7IVCANjQHIXGC5siGap6frKsw2hfnnlUT3sP6uYiqtmkQ9_A1Kn3tHGdKY1tanQJbyCb-xkU2uQpTcC-8u_wHbassJKd9UQ-cLGsW2k8mlJnpcKVEKd2oLhZcRzLePg">
+</div>
+<div class="p-stack-sm">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md text-on-background">Fatima</h4>
+<span class="text-on-surface-variant font-label-md">10 yrs old</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Grade 5 • Wants to be a <strong>Teacher</strong></p>
+<a href="donate.html" class="w-full bg-primary text-on-primary py-3 rounded-full font-label-md hover:bg-primary-container transition-colors" style="text-align:center">Sponsor Me</a>
+</div>
+</div>
+<!-- Profile Card 4 -->
+<div class="bg-white rounded-xl overflow-hidden ambient-shadow card-hover transition-all duration-300">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A candid, heartwarming photo of a 6-year-old boy named Chidi laughing while playing with a football. The setting is a dusty but clean courtyard with sunbeams piercing through a nearby tree. The style is professional documentary photography, capturing a genuine moment of childhood joy in a warm, dignified manner consistent with a high-end foundation website." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhjVEyoPMN-bT98vLDqhSI6F2LoKxW73cUCD1k0bAvKAYlKHW74CrtG6-v7MtrcLl6HFCMVuCiPGHU9tEPk1bjgp-PRykwlUuuCi5-JFdMHYaV953OovOsch_M-PzKQ_d1t1YPkB1bTjqYiDr6cR8Zn5vlFaFQFGTcE-D0gf-kF7_8Ag81UgRTrZrKuSlSjoVpamOmttJ0TwdFwwKGnIgemi1BB_xmDzOLvj0PcFE3jZjkyPT1sCkXaw">
+</div>
+<div class="p-stack-sm">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md text-on-background">Chidi</h4>
+<span class="text-on-surface-variant font-label-md">6 yrs old</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Grade 1 • Wants to be an <strong>Engineer</strong></p>
+<a href="donate.html" class="w-full bg-primary text-on-primary py-3 rounded-full font-label-md hover:bg-primary-container transition-colors" style="text-align:center">Sponsor Me</a>
+</div>
+</div>
+<!-- Profile Card 5 -->
+<div class="bg-white rounded-xl overflow-hidden ambient-shadow card-hover transition-all duration-300">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A studio-quality portrait of a 9-year-old girl named Amara with a thoughtful expression, wearing a bright blue school uniform. The lighting is soft and flattering, emphasizing hope and dignity. The background is a neutral warm gray that complements the primary brand colors. High attention to detail in the textures of her uniform and hair." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAqQgprFo21aMVpdoFt2jLqc913n2ZxBoWP-cgcZ3Ej9O-S1_5HaYZhX87V8UzSIp6FkVkcfE9vDzW5EKqv3KboMs7W7i1FUehMhIyKmNRBecFPDFV0HQUVJqRxUk69EwxxmclPeiDHJpmAlDygXc1zeXEXhWOQxRVVo50ziAtE1CRcLSuCpfomFZ61UyfcNpDNln9ELD0T1ES_j3c2WMPB5NEU1dwgvoAONopqYsryopuYW-BFYLqQA">
+</div>
+<div class="p-stack-sm">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md text-on-background">Amara</h4>
+<span class="text-on-surface-variant font-label-md">9 yrs old</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Grade 4 • Wants to be an <strong>Artist</strong></p>
+<a href="donate.html" class="w-full bg-primary text-on-primary py-3 rounded-full font-label-md hover:bg-primary-container transition-colors" style="text-align:center">Sponsor Me</a>
+</div>
+</div>
+<!-- Profile Card 6 -->
+<div class="bg-white rounded-xl overflow-hidden ambient-shadow card-hover transition-all duration-300">
+<div class="h-64 relative overflow-hidden">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">New Profile</span>
+</div>
+<img class="w-full h-full object-cover" data-alt="Portrait of an 11-year-old boy named Samuel holding a science model. He looks proud and curious. The lighting is bright and modern, suggesting a clean, forward-thinking educational environment. The style is polished and high-end, using a warm color grade that aligns with the African landscape inspired palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0HZp8aSfPfOmHKvtUblAh74ACP4SHeZDfp70JajB-MyKieKe8dKVDKs6xOs5B23lNHjPTAIXymxCgLhRl1_mfopyRtaCk6rSUzsIB7yC1edQ7dTb0Azl8o-wdJDfTd95nYT3in4i4l-OIHxEL1j4QGb6Twu-QT_O4Z_T-kNNsQ196k1wBvQj27i_k4YoyF2XRXcUy7b7EuJIXTS7NxA8U0kgAds_2-u6-KB-pl4LoRhL_y6Nwhe_gjw">
+</div>
+<div class="p-stack-sm">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md text-on-background">Samuel</h4>
+<span class="text-on-surface-variant font-label-md">11 yrs old</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Grade 6 • Wants to be a <strong>Scientist</strong></p>
+<a href="donate.html" class="w-full bg-primary text-on-primary py-3 rounded-full font-label-md hover:bg-primary-container transition-colors" style="text-align:center">Sponsor Me</a>
+</div>
+</div>
+<!-- Profile Card 7 -->
+<div class="bg-white rounded-xl overflow-hidden ambient-shadow card-hover transition-all duration-300">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up of a young 8-year-old girl named Grace laughing, her face lit by soft morning light. She is standing near a school library shelf. The image conveys a sense of belonging and the joy of learning. The photography is clean, sharp, and uses the foundation's warm neutral tones in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLQLFgBV47uOMdO3NKgQZsaYihGjnZOl-16E2nkzqIeJyq1NHCHw9KrslceT_YDoqPVtfkUiCDFEwFVbfJqvHlNCd2nM_OtY1uevEYihMhyd1B9xPZEgOEQQyCcE-bDJRSV4RtVDWWOJX5XqRa-bvgrIsqqnuRHHeGz7ip10T3N34V199Zb-ZlQ_5xTVGc3LbMKxeWESwOXutGfyFuFrj0oQN9xl08fkJqdCJJ_9d_TA6CZjWQgapbWQ">
+</div>
+<div class="p-stack-sm">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md text-on-background">Grace</h4>
+<span class="text-on-surface-variant font-label-md">8 yrs old</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Grade 3 • Wants to be a <strong>Nurse</strong></p>
+<a href="donate.html" class="w-full bg-primary text-on-primary py-3 rounded-full font-label-md hover:bg-primary-container transition-colors" style="text-align:center">Sponsor Me</a>
+</div>
+</div>
+<!-- Profile Card 8 -->
+<div class="bg-white rounded-xl overflow-hidden ambient-shadow card-hover transition-all duration-300">
+<div class="h-64 relative overflow-hidden">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-tertiary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Needs Support</span>
+</div>
+<img class="w-full h-full object-cover" data-alt="A portrait of a 7-year-old boy named Ibrahim in a bright courtyard, smiling with gentle confidence. He is carrying a small backpack. The lighting is golden hour, creating a warm, inviting atmosphere. The overall visual style is professional and deeply human, avoiding stereotypes and celebrating his dignity and potential." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiRGDPzjFz0ClEfIN6Wf3QuWdtOHY5iLn5vby5PfZj0K2OaUQftsxgNyAmSi8TXheJmAWIClbhHYMUYY0v8xFAL4vxAwjmpFKeT_sSrvmdf7IX2MNHBB_NfKkrcR1hJLw7s2EJbYZbEEPLbqnHKk9iwNLO8eoNb5nhx_nD3erHHVUl_1mk_CuhjxWCkDKmX2n1Iuipcnsj2lhWnDdCoLw8jZsTgpoodOASHoMFIzDViFbsfFJ3NsyXaQ">
+</div>
+<div class="p-stack-sm">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md text-on-background">Ibrahim</h4>
+<span class="text-on-surface-variant font-label-md">7 yrs old</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Grade 2 • Wants to be an <strong>Architect</strong></p>
+<a href="donate.html" class="w-full bg-primary text-on-primary py-3 rounded-full font-label-md hover:bg-primary-container transition-colors" style="text-align:center">Sponsor Me</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sponsorship Tiers -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Sponsorship Tiers</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Choose a level of support that works for you. Your commitment provides consistent, long-term care for these children.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Basic Tier -->
+<div class="bg-surface-container-low p-stack-md rounded-2xl border-2 border-transparent hover:border-primary/20 transition-all ambient-shadow flex flex-col">
+<div class="mb-stack-sm">
+<span class="text-primary font-label-md uppercase tracking-widest">Starter</span>
+<h3 class="font-headline-lg text-headline-lg text-on-background mt-2">Basic</h3>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="text-3xl font-bold">₦5,000</span>
+<span class="text-on-surface-variant">/month</span>
+</div>
+</div>
+<ul class="space-y-4 mb-stack-md flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="">School supplies &amp; uniform</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="">Textbooks &amp; Stationery</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="">Annual health check-up</span>
+</li>
+</ul>
+<button class="w-full border-2 border-primary text-primary py-3 rounded-full font-label-md hover:bg-primary hover:text-white transition-all">Select Basic</button>
+</div>
+<!-- Essential Tier -->
+<div class="bg-white p-stack-md rounded-2xl border-2 border-secondary relative ambient-shadow flex flex-col scale-105 z-10">
+<div class="absolute top-0 right-8 transform -translate-y-1/2 bg-secondary text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Most Impactful</div>
+<div class="mb-stack-sm">
+<span class="text-secondary font-label-md uppercase tracking-widest">Balanced</span>
+<h3 class="font-headline-lg text-headline-lg text-on-background mt-2">Essential</h3>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="text-3xl font-bold">₦15,000</span>
+<span class="text-on-surface-variant">/month</span>
+</div>
+</div>
+<ul class="space-y-4 mb-stack-md flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-bold text-on-background">All Basic benefits</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="">Full Tuition Fees</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="">After-school tutoring</span>
+</li>
+</ul>
+<button class="w-full bg-secondary text-white py-4 rounded-full font-label-md hover:opacity-90 shadow-lg transition-all">Select Essential</button>
+</div>
+<!-- Full Impact Tier -->
+<div class="bg-surface-container-low p-stack-md rounded-2xl border-2 border-transparent hover:border-primary/20 transition-all ambient-shadow flex flex-col">
+<div class="mb-stack-sm">
+<span class="text-tertiary font-label-md uppercase tracking-widest">Comprehensive</span>
+<h3 class="font-headline-lg text-headline-lg text-on-background mt-2">Full Impact</h3>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="text-3xl font-bold">₦30,000</span>
+<span class="text-on-surface-variant">/month</span>
+</div>
+</div>
+<ul class="space-y-4 mb-stack-md flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-bold text-on-background">All Essential benefits</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="">Daily nutritious meals</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="">Professional Mentorship</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="">Full Healthcare Coverage</span>
+</li>
+</ul>
+<button class="w-full border-2 border-tertiary text-tertiary py-3 rounded-full font-label-md hover:bg-tertiary hover:text-white transition-all">Select Full Impact</button>
+</div>
+</div>
+</section>
+<!-- Impact Testimonial -->
+<section class="bg-primary py-stack-lg overflow-hidden relative">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary rounded-full blur-3xl"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center">
+<div class="rounded-2xl overflow-hidden ambient-shadow h-[450px]">
+<img class="w-full h-full object-cover" data-alt="A heart-warming image of a young university graduate in a cap and gown, hugging an older female mentor who has a look of extreme pride. Both are beaming with joy. The setting is a bright, sun-filled graduation ceremony. This image represents the ultimate goal of the sponsorship program: long-term success and life-long bonds." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_6TY--reQFeI9seSJss3R-PraBpeJYxCO7gWsbwtn832hGaiM2bwgEYYafY6c243wqw6fHCoVQH00rU9PR0Gxr2t_x21veVVuyDqtSoqr6oo7TqATIrsplSmwcv53HvZbp1hibrlWf0K2xEVEmwgLtIBVyM67a-n8LXSbAMUKBPGJ1NbSR5UniWQ2kOQpGiRVsriO5aom4PJEC3witYWS8AdkGMmPsSZ3nS5egn9dI1WOT2rlRs9hiA">
+</div>
+<div class="text-white">
+<span class="material-symbols-outlined text-6xl opacity-30 mb-stack-sm">format_quote</span>
+<h2 class="font-headline-lg text-headline-lg mb-stack-sm leading-snug italic">"Sponsorship wasn't just about the money; it was knowing someone halfway across the world believed in me. Today, I am a software engineer because Yanju Foundation gave me the chance."</h2>
+<div class="flex items-center gap-4">
+<div class="w-12 h-1 bg-white/50"></div>
+<div>
+<p class="font-bold text-lg">Emmanuel O.</p>
+<p class="text-primary-fixed">Former Sponsored Student, 2012-2022</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Common Questions</h2>
+<p class="text-on-surface-variant">Everything you need to know about sponsoring a child.</p>
+</div>
+<div class="space-y-stack-sm">
+<!-- FAQ Item 1 -->
+<details class="group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary/20 transition-all">
+<summary class="flex justify-between items-center p-stack-sm cursor-pointer list-none font-bold text-on-background">
+                        How is my money spent?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-stack-sm pb-stack-sm text-on-surface-variant">
+                        Approximately 85% of your donation goes directly to the child's needs—school fees, supplies, health programs, and nutritional support. The remaining 15% covers essential local staff support and monitoring to ensure your child is thriving and safe.
+                    </div>
+</details>
+<!-- FAQ Item 2 -->
+<details class="group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary/20 transition-all">
+<summary class="flex justify-between items-center p-stack-sm cursor-pointer list-none font-bold text-on-background">
+                        Can I write letters to my child?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-stack-sm pb-stack-sm text-on-surface-variant">
+                        Yes! We encourage communication. You can send letters and photos through our secure online portal. Our local team assists children who are still learning to read and write, and you will receive at least two personal updates or letters from your child each year.
+                    </div>
+</details>
+<!-- FAQ Item 3 -->
+<details class="group bg-surface-container-low rounded-xl overflow-hidden border border-transparent hover:border-primary/20 transition-all">
+<summary class="flex justify-between items-center p-stack-sm cursor-pointer list-none font-bold text-on-background">
+                        Is sponsorship a long-term commitment?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-stack-sm pb-stack-sm text-on-surface-variant">
+                        Sponsorship is most effective when it's a long-term relationship, ideally lasting through the child's education. However, we understand that circumstances change. You can cancel your sponsorship at any time, and we will work immediately to find a new sponsor so the child's support is never interrupted.
+                    </div>
+</details>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-stack-lg text-center bg-surface-container-highest">
+<div class="max-w-2xl mx-auto px-margin-mobile">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Ready to make a difference?</h2>
+<p class="text-on-surface-variant mb-stack-md">A child is waiting to start their journey today. Will you be the one to help them?</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-md text-lg ambient-shadow hover:translate-y-[-2px] transition-all" href="#waiting-children">Start Sponsoring Now</a>
+<a class="border-2 border-secondary text-secondary px-10 py-4 rounded-full font-label-md text-lg hover:bg-secondary hover:text-white transition-all" href="#">Download Info Pack</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter bg-surface-container-low py-stack-lg">
+<div class="md:col-span-1">
+<a href="index.html" class="block mb-4 h-[190px]"><img src="assets/logo.png" alt="Yanju Foundation Logo" class="h-[190px] w-auto object-contain" style=""></a>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">Empowering youth through education and community-driven impact across Nigeria.</p>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-bold mb-2">Programmes</h4>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="programs.html">Education Support</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="programs.html">Health Initiatives</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="programs.html">Mentorship</a>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-bold mb-2">Quick Links</h4>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="about.html">About Us</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="faq.html">Contact Us</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Annual Reports</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="mailto:yanjufoundation@gmail.com">yanjufoundation@gmail.com</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="tel:+2347047444628">+234 704 744 4628</a>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-bold mb-2">Legal</h4>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<p class="text-xs text-on-surface-variant mt-4 opacity-75">© 2024 Yanju Foundation. All rights reserved. Empowering youth through education.</p>
+</div>
+<div class="yj-footer-contact">
+<a href="https://www.instagram.com/yanjufoundation" target="_blank" rel="noopener"><span class="material-symbols-outlined">photo_camera</span>Instagram: @yanjufoundation</a>
+<a href="mailto:yanjufoundation@gmail.com"><span class="material-symbols-outlined">mail</span>yanjufoundation@gmail.com</a>
+<a href="tel:+2347047444628"><span class="material-symbols-outlined">call</span>+234 704 744 4628</a>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for child cards
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const img = card.querySelector('img');
+                if(img) img.style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('img');
+                if(img) img.style.transform = 'scale(1)';
+            });
+        });
+
+        // Sticky Navbar transparency logic
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('bg-background/80');
+                nav.classList.add('bg-background');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('bg-background/80');
+                nav.classList.remove('bg-background');
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body></html>

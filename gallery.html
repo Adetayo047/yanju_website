@@ -1,0 +1,369 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Gallery | Yanju Foundation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#002116",
+                        "primary-fixed": "#ffdcc3",
+                        "surface-container-low": "#fff1eb",
+                        "tertiary": "#065f46",
+                        "on-background": "#451a03",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fff8f6",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#d97706",
+                        "primary-container": "#b45309",
+                        "background": "#fff8f6",
+                        "inverse-on-surface": "#ffede6",
+                        "on-secondary-fixed": "#390c00",
+                        "surface-bright": "#fff8f6",
+                        "inverse-surface": "#51230a",
+                        "on-secondary-fixed-variant": "#832600",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#ffd0bc",
+                        "surface-container-high": "#ffe2d7",
+                        "on-surface-variant": "#554336",
+                        "tertiary-fixed-dim": "#8bd6b6",
+                        "on-error": "#ffffff",
+                        "outline": "#887364",
+                        "on-tertiary-fixed-variant": "#00513b",
+                        "on-tertiary-container": "#f5fff8",
+                        "surface-container-highest": "#ffdbcc",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-primary-container": "#fffbff",
+                        "surface-container": "#ffeae1",
+                        "on-secondary-container": "#5d1900",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ffb77d",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#ffb77d",
+                        "secondary": "#c2410c",
+                        "tertiary-fixed": "#a6f2d1",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#ffdbcc",
+                        "secondary-fixed": "#ffdbd0",
+                        "outline-variant": "#dbc2b0",
+                        "on-surface": "#451a03",
+                        "secondary-container": "#fd6b36",
+                        "surface-tint": "#d97706",
+                        "on-primary-fixed": "#2f1500",
+                        "tertiary-container": "#047857",
+                        "secondary-fixed-dim": "#ffb59d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "stack-sm": "16px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "stack-md": "32px",
+                        "stack-lg": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .category-chip.active {
+            background-color: #d97706;
+            color: #ffffff;
+        }
+        .lightbox-open {
+            overflow: hidden;
+        }
+    </style>
+<link href="assets/enhance.css?v=4" rel="stylesheet">
+<script defer src="assets/enhance.js?v=4"></script>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed-dim">
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-surface dark:bg-inverse-surface border-none transition-all duration-300 shadow-md py-2 py-4">
+<div class="flex justify-between items-center px-gutter py-4 w-full max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight" href="index.html"><img src="assets/logo.png" alt="Yanju Foundation Logo" class="w-auto object-contain" style="height: 190px; "></a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-stack-md">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="index.html">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="about.html">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="programs.html">Programs</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="gallery.html">Gallery</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="success-stories.html">Success Stories</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-200" href="volunteer.html">Volunteer</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="faq.html" class="hidden md:block px-6 py-2 border-2 border-primary text-primary font-label-md rounded-full hover:bg-primary hover:text-white transition-all duration-300 active:scale-95" style="text-align:center">Contact</a>
+<a href="donate.html" class="px-8 py-2 bg-primary text-white font-label-md rounded-full shadow-lg hover:shadow-xl transition-all duration-300 active:scale-95" style="text-align:center">Donate</a>
+<button class="md:hidden text-on-surface-variant"><span class="material-symbols-outlined">menu</span></button>
+</div>
+</div>
+</nav>
+<main class="w-full max-w-container-max mx-auto px-gutter py-stack-lg">
+<!-- Header Section -->
+<header class="mb-stack-lg text-center max-w-3xl mx-auto">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-stack-sm">A Visual Journey of Impact</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Capturing the moments of hope, empowerment, and growth within our communities. Explore the stories behind our outreach.</p>
+</header>
+<!-- Category Filters -->
+<div class="flex flex-wrap justify-center gap-3 mb-stack-md" id="filters">
+<button class="category-chip active px-6 py-2 rounded-full border-2 border-primary text-primary font-label-md transition-all duration-200 hover:bg-primary-fixed-dim" data-filter="all">All Moments</button>
+<button class="category-chip px-6 py-2 rounded-full border-2 border-primary text-primary font-label-md transition-all duration-200 hover:bg-primary-fixed-dim" data-filter="education">Education</button>
+<button class="category-chip px-6 py-2 rounded-full border-2 border-primary text-primary font-label-md transition-all duration-200 hover:bg-primary-fixed-dim" data-filter="mentorship">Mentorship</button>
+<button class="category-chip px-6 py-2 rounded-full border-2 border-primary text-primary font-label-md transition-all duration-200 hover:bg-primary-fixed-dim" data-filter="outreach">Outreach</button>
+<button class="category-chip px-6 py-2 rounded-full border-2 border-primary text-primary font-label-md transition-all duration-200 hover:bg-primary-fixed-dim" data-filter="events">Events</button>
+</div>
+<!-- Bento Grid Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="gallery">
+  <!-- Item 1: Education -->
+  <div class="gallery-item group relative overflow-hidden rounded-xl shadow-md cursor-pointer aspect-[4/3]" data-category="education">
+    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8lB-p9ce9Z_k1-dpgc4QybAG6F-PiDsKjjrFvyu-8ORvdJ95vW9jU_myimNz4q2Hw0Hd5KwlxDgtPwKeYhe_dZfCoBX0X1Van6uXZfJ4gOVlLh5j4WuWZF_GvnyzRcoBYpgcU4NYHe8-D3EsNBDvMRy6VYdExlHpzBqlHy6-gp_ZdJQvq8_hYARixC2LkgRVd_2qHWF1UqaKejud84GZQ3sU2uTPKYmrtUyGI2h0ic9mcUjc2IDp8jg')" data-alt="Students in classroom"></div>
+    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+      <span class="text-white/80 font-label-md mb-1">Education</span>
+      <h3 class="text-white font-headline-md text-headline-md">Learning Together</h3>
+    </div>
+  </div>
+  <!-- Item 2: Mentorship -->
+  <div class="gallery-item group relative overflow-hidden rounded-xl shadow-md cursor-pointer aspect-[4/3]" data-category="mentorship">
+    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAodBgivI3-6yLYjE9IgTvxY81Gc0njDMKEwSJsSHALH5ykZabQUJKFl4Z1ak4W1khTkuUf95qIEhGAOKehZUsn49FXjPMvhmPbgcl24DpTjdHTFiC7QOuvlHZArcKdXhP-BYPu1Obcv31VI4iqg8aJ1PT9RoubG8BVBXjzC-Dj7nANk_iV9kjtJPiem_tJBuaYgA2dixCSEAcJEqr4FOJRUk3CAPP2GfpVnO3-F0f_vzNgtu8DJwtsgA')" data-alt="Mentorship session"></div>
+    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+      <span class="text-white/80 font-label-md mb-1">Mentorship</span>
+      <h3 class="text-white font-headline-md text-headline-md">Guiding the Future</h3>
+    </div>
+  </div>
+  <!-- Item 3: Outreach -->
+  <div class="gallery-item group relative overflow-hidden rounded-xl shadow-md cursor-pointer aspect-[4/3]" data-category="outreach">
+    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVRx8lzmacMbQHirow2e6Dsr8YBG47QMWQiTsgMK00ATJugNntB2qNQhhAHX8rdWoRpKHVNS667nMIja9fMrJ6Rl8ET_iidIOpKzgobWz1mOtfkrXSP2ZFtybY-2SiBZ5Xyh0D5RG6JD_VoD1Qapw9rO60CS0iRSgDjgdTzoj8cnZQGfPiMFm6KEetJNutyqhDhfDILsESjXAkH2LpqlSIZ3rbI_F8van1pBPrqILVIvRWeyKewzqG3A')" data-alt="Community outreach"></div>
+    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+      <span class="text-white/80 font-label-md mb-1">Outreach</span>
+      <h3 class="text-white font-headline-md text-headline-md">Community Support</h3>
+    </div>
+  </div>
+  <!-- Item 4: Education -->
+  <div class="gallery-item group relative overflow-hidden rounded-xl shadow-md cursor-pointer aspect-[4/3]" data-category="education">
+    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCuNkESfv6HLHdetvCCJXYRc86RA4DMyEymI95RHABfgce1sW1RoHz8KgOy9R2qFGo9f7NO70QeUd-JHzW3WfloE8nOG63lAPyrtKF56UySY-tq7bdcw_s7kCtD_TKBIkc8SqgYBUpqlW3VOlvMc3eLrWRS7tp4KwfUdai4w4cRCOw_l7pfLNJpgbZ6zM_EhfKPZYgSyiSPe3sl0QOId5g8ovHR3SSECHyRTo4tCU9nzPpT8Zjvy6mPdQ')" data-alt="Student with workbook"></div>
+    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+      <span class="text-white/80 font-label-md mb-1">Education</span>
+      <h3 class="text-white font-headline-md text-headline-md">Empowered Learning</h3>
+    </div>
+  </div>
+  <!-- Item 5: Mentorship -->
+  <div class="gallery-item group relative overflow-hidden rounded-xl shadow-md cursor-pointer aspect-[4/3]" data-category="mentorship">
+    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuChxr0-Pd4WlvrkyqaJpjc-KTzRdBmZlqda29KvNxHABJ0p1j-cx-GmXZlihZlQZofXqHZugUlYVV831uHCH2ah1OOeTPcCk0dJXchfvLMCPKCs3q-8cf4ifZ6CJPkos75U5kyCojuajpMhk1JxwFpkQJwkGPGY1ervli7prRlBKjnAK9jiZlF8N1SukhXuS-4-HEVZstXdAWZhBRDLOaR-Qr_zxosQaKNtzvIzgpGYwZ5W1WsdVh7fRw')" data-alt="Purpose development workshop"></div>
+    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+      <span class="text-white/80 font-label-md mb-1">Mentorship</span>
+      <h3 class="text-white font-headline-md text-headline-md">Purpose Development</h3>
+    </div>
+  </div>
+  <!-- Item 6: Success -->
+  <div class="gallery-item group relative overflow-hidden rounded-xl shadow-md cursor-pointer aspect-[4/3]" data-category="events">
+    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbtzKjrumaR9hgfPkAGwBYP3TUKoxwq6hc6FsSiI81KeoBPfM7jw2BaR9jKQ_O6ep_Jlx2i2lyb02qoYwv9WHBwqo7vXMeyqVFZXH8cBWtkXf6-9WVtRphkDLtzVi37MG3CmX_7i_Aloa163L4q86qaPX-iwHPaASokenGqTN_9B1aREpCzc05dg-hh26BF8fyq6-GIGMi7wtxnXnd2udWGVcBOg8a2kOizvCXOA8eGSOJkoNp5KLcwA')" data-alt="Scholarship award"></div>
+    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+      <span class="text-white/80 font-label-md mb-1">Success Stories</span>
+      <h3 class="text-white font-headline-md text-headline-md">Academic Excellence</h3>
+    </div>
+  </div>
+</div>
+<!-- Load More -->
+<div class="mt-stack-lg text-center">
+<a href="success-stories.html" class="px-10 py-4 bg-surface-container-high text-primary font-bold rounded-full hover:bg-surface-dim transition-all duration-300 border border-outline-variant active:scale-95 shadow-sm" style="text-align:center">
+                View All Stories
+            </a>
+</div>
+</main>
+<!-- Lightbox Modal (Hidden by default) -->
+<div class="fixed inset-0 z-[100] bg-on-background/95 backdrop-blur-sm flex flex-col items-center justify-center p- gutter hidden transition-opacity duration-300" id="lightbox">
+<button class="absolute top-6 right-6 text-white p-2 hover:bg-white/10 rounded-full transition-colors" id="close-lightbox">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<div class="relative max-w-5xl w-full flex items-center justify-center group">
+<button class="absolute left-0 text-white p-4 opacity-0 group-hover:opacity-100 transition-opacity" id="prev-btn">
+<span class="material-symbols-outlined text-5xl">chevron_left</span>
+</button>
+<img class="max-h-[85vh] w-auto rounded-lg shadow-2xl" data-alt="A placeholder for the lightbox expanded image view." id="lightbox-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl2go8xCgTfOc-v77ibMfIr0NtT4bXPBzqiQtDQrBBzp7vh7wVXjEOcrjUGHoGgr6ILqtLnFhYgBVYiZTJO8-ItyprO0M42Q-mtDOT8imrtOMufwE2C3_TRY1OGpPDNws-yr4MUDyqC6zCoeLX0e_ltcue-DbyaRRVboWvoGDkrcjVmlrgnQYBGScoF_FfD9TV89HwVu8mL1sm26E8dWSzM270RPfjXya93c_nGhsooK0tv6Pooa5z8g">
+<button class="absolute right-0 text-white p-4 opacity-0 group-hover:opacity-100 transition-opacity" id="next-btn">
+<span class="material-symbols-outlined text-5xl">chevron_right</span>
+</button>
+</div>
+<div class="mt-6 text-center text-white">
+<h4 class="font-headline-md text-headline-md mb-1" id="lightbox-title">Impact Title</h4>
+<p class="text-white/70 font-label-md uppercase tracking-widest" id="lightbox-desc">Category Name</p>
+</div>
+</div>
+<!-- Footer -->
+<footer class="full-width bg-surface-container-highest dark:bg-on-tertiary-fixed border-none mt-stack-lg py-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-md px-gutter py-stack-lg w-full max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed" href="index.html"><img src="assets/logo.png" alt="Yanju Foundation Logo" class="w-auto object-contain" style="height: 190px; "></a>
+<p class="font-body-md text-on-surface-variant max-w-xs">Empowering the next generation through education, mentorship, and sustainable outreach initiatives.</p>
+</div>
+<div>
+<h4 class="font-label-md text-primary dark:text-primary-fixed mb-4">Quick Links</h4>
+<ul class="flex flex-col gap-2">
+<li class=""><a class="font-label-md text-on-surface-variant hover:text-secondary transition-colors" href="index.html">Home</a></li>
+<li class=""><a class="font-label-md text-on-surface-variant hover:text-secondary transition-colors" href="programs.html">Programs</a></li>
+<li class=""><a class="font-label-md text-on-surface-variant hover:text-secondary transition-colors" href="success-stories.html">Success Stories</a></li>
+<li class=""><a class="font-label-md text-on-surface-variant hover:text-secondary transition-colors" href="gallery.html">Gallery</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-primary dark:text-primary-fixed mb-4">Involved</h4>
+<ul class="flex flex-col gap-2">
+<li class=""><a class="font-label-md text-on-surface-variant hover:text-secondary transition-colors" href="volunteer.html">Volunteer</a></li>
+<li class=""><a class="font-label-md text-on-surface-variant hover:text-secondary transition-colors" href="volunteer.html">Partner With Us</a></li>
+<li class=""><a class="font-label-md text-on-surface-variant hover:text-secondary transition-colors" href="donate.html">Donate</a></li>
+<li class=""><a class="font-label-md text-on-surface-variant hover:text-secondary transition-colors" href="faq.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-primary dark:text-primary-fixed mb-4">Follow Our Journey</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="https://www.instagram.com/yanjufoundation" target="_blank" rel="noopener"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="https://www.instagram.com/yanjufoundation" target="_blank" rel="noopener"><span class="material-symbols-outlined">share_reviews</span></a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="mailto:yanjufoundation@gmail.com"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</div>
+<div class="px-gutter py-6 border-t border-outline-variant w-full max-w-container-max mx-auto text-center">
+<p class="text-on-surface-variant font-label-md">© 2024 Yanju Foundation. Registered with CAC. All rights reserved.</p>
+</div>
+<div class="yj-footer-contact">
+<a href="https://www.instagram.com/yanjufoundation" target="_blank" rel="noopener"><span class="material-symbols-outlined">photo_camera</span>Instagram: @yanjufoundation</a>
+<a href="mailto:yanjufoundation@gmail.com"><span class="material-symbols-outlined">mail</span>yanjufoundation@gmail.com</a>
+<a href="tel:+2347047444628"><span class="material-symbols-outlined">call</span>+234 704 744 4628</a>
+</div>
+</footer>
+<script>
+        // Gallery Filter Logic
+        const filters = document.querySelectorAll('.category-chip');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filters.forEach(filter => {
+            filter.addEventListener('click', () => {
+                // Update buttons
+                filters.forEach(f => f.classList.remove('active', 'bg-primary', 'text-white'));
+                filter.classList.add('active');
+
+                const category = filter.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.classList.remove('hidden');
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            item.classList.add('hidden');
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxDesc = document.getElementById('lightbox-desc');
+        const closeLightbox = document.getElementById('close-lightbox');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const bgImg = item.querySelector('div').style.backgroundImage;
+                const title = item.querySelector('h3') ? item.querySelector('h3').innerText : 'Impact Moment';
+                const cat = item.getAttribute('data-category');
+                const altText = item.querySelector('div').getAttribute('data-alt');
+
+                lightboxImg.src = bgImg.replace('url("', '').replace('")', '');
+                lightboxImg.setAttribute('data-alt', altText);
+                lightboxTitle.innerText = title;
+                lightboxDesc.innerText = cat.charAt(0).toUpperCase() + cat.slice(1);
+
+                lightbox.classList.remove('hidden');
+                document.body.classList.add('lightbox-open');
+                setTimeout(() => lightbox.style.opacity = '1', 10);
+            });
+        });
+
+        closeLightbox.addEventListener('click', () => {
+            lightbox.style.opacity = '0';
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                document.body.classList.remove('lightbox-open');
+            }, 300);
+        });
+
+        // Simple Close on Backdrop click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox.click();
+        });
+
+        // Scroll shadow for Nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md', 'py-2');
+                nav.classList.remove('shadow-sm', 'py-4');
+            } else {
+                nav.classList.add('shadow-sm', 'py-4');
+                nav.classList.remove('shadow-md', 'py-2');
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
