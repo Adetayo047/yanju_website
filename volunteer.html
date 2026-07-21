@@ -115,7 +115,7 @@
       }
     </style>
 <link href="assets/enhance.css?v=4" rel="stylesheet">
-<script defer src="assets/enhance.js?v=4"></script>
+<script defer src="assets/enhance.js?v=8"></script>
 </head>
 <body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
 <!-- TopNavBar -->
@@ -286,25 +286,25 @@
 <h2 class="font-headline-lg text-headline-lg mb-2">Volunteer Application</h2>
 <p class="text-on-surface-variant font-body-md">Fill out the form below and our team will get back to you within 48 hours.</p>
 </div>
-<form class="space-y-6">
+<form class="space-y-6" id="volunteer-form">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-2">
 <label class="font-label-md text-label-md text-on-surface px-1">Full Name</label>
-<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="John Doe" type="text">
+<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="John Doe" type="text" name="full_name" required>
 </div>
 <div class="space-y-2">
 <label class="font-label-md text-label-md text-on-surface px-1">Email Address</label>
-<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="john@example.com" type="email">
+<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="john@example.com" type="email" name="email" required>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-2">
 <label class="font-label-md text-label-md text-on-surface px-1">Phone Number</label>
-<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="+234..." type="tel">
+<input class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="+234..." type="tel" name="phone">
 </div>
 <div class="space-y-2">
 <label class="font-label-md text-label-md text-on-surface px-1">Area of Interest</label>
-<select class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none appearance-none bg-white">
+<select class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none appearance-none bg-white" name="area_of_interest">
 <option disabled="" selected="" value="">Select an area</option>
 <option>Mentorship</option>
 <option>STEM Education</option>
@@ -318,27 +318,28 @@
 <label class="font-label-md text-label-md text-on-surface px-1">Weekly Availability</label>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 <label class="flex items-center gap-2 p-4 border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container transition-colors">
-<input class="w-5 h-5 text-primary border-outline-variant rounded focus:ring-primary" type="checkbox">
+<input class="w-5 h-5 text-primary border-outline-variant rounded focus:ring-primary" type="checkbox" name="availability" value="Weekday AM">
 <span class="font-label-md">Weekday AM</span>
 </label>
 <label class="flex items-center gap-2 p-4 border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container transition-colors">
-<input class="w-5 h-5 text-primary border-outline-variant rounded focus:ring-primary" type="checkbox">
+<input class="w-5 h-5 text-primary border-outline-variant rounded focus:ring-primary" type="checkbox" name="availability" value="Weekday PM">
 <span class="font-label-md">Weekday PM</span>
 </label>
 <label class="flex items-center gap-2 p-4 border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container transition-colors">
-<input class="w-5 h-5 text-primary border-outline-variant rounded focus:ring-primary" type="checkbox">
+<input class="w-5 h-5 text-primary border-outline-variant rounded focus:ring-primary" type="checkbox" name="availability" value="Weekends">
 <span class="font-label-md">Weekends</span>
 </label>
 <label class="flex items-center gap-2 p-4 border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container transition-colors">
-<input class="w-5 h-5 text-primary border-outline-variant rounded focus:ring-primary" type="checkbox">
+<input class="w-5 h-5 text-primary border-outline-variant rounded focus:ring-primary" type="checkbox" name="availability" value="Remote Only">
 <span class="font-label-md">Remote Only</span>
 </label>
 </div>
 </div>
 <div class="space-y-2">
 <label class="font-label-md text-label-md text-on-surface px-1">Briefly describe your relevant experience</label>
-<textarea class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none" placeholder="Tell us why you'd like to join..." rows="4"></textarea>
+<textarea class="w-full px-5 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none" placeholder="Tell us why you'd like to join..." rows="4" name="experience"></textarea>
 </div>
+<p class="text-sm text-red-600 hidden" id="volunteer-form-error"></p>
 <button class="w-full py-5 bg-primary text-white font-label-md text-label-md rounded-full shadow-lg hover:scale-[0.98] transition-all flex items-center justify-center gap-2" type="submit">
                         Submit Application
                         <span class="material-symbols-outlined">send</span>
@@ -353,10 +354,11 @@
 <div class="absolute bottom-0 left-0 w-48 h-48 bg-secondary/20 rounded-full -ml-24 -mb-24"></div>
 <h2 class="font-headline-lg text-headline-lg mb-6 relative z-10">Not ready to volunteer?</h2>
 <p class="font-body-lg text-body-lg mb-10 max-w-xl mx-auto opacity-90 relative z-10">Stay updated with our latest news, program successes, and future opportunities to help. Join our community newsletter.</p>
-<div class="max-w-md mx-auto flex flex-col md:flex-row gap-4 relative z-10">
-<input class="flex-grow px-6 py-4 rounded-full bg-white/20 border border-white/30 text-white placeholder:text-white/60 focus:bg-white/30 outline-none backdrop-blur-sm" placeholder="Your email address" type="email">
-<button class="bg-white text-tertiary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container transition-colors">Subscribe</button>
+<div class="max-w-md mx-auto flex flex-col md:flex-row gap-4 relative z-10 yj-newsletter-widget">
+<input class="flex-grow px-6 py-4 rounded-full bg-white/20 border border-white/30 text-white placeholder:text-white/60 focus:bg-white/30 outline-none backdrop-blur-sm yj-newsletter-input" placeholder="Your email address" type="email">
+<button class="bg-white text-tertiary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container transition-colors yj-newsletter-submit">Subscribe</button>
 </div>
+<p class="yj-newsletter-message text-sm mt-3 relative z-10 hidden"></p>
 </div>
 </section>
 </main>
@@ -416,19 +418,45 @@
 </div>
 </footer>
 <script>
-        // Simple form interaction
-        document.querySelector('form')?.addEventListener('submit', (e) => {
+        // Volunteer application submission
+        document.getElementById('volunteer-form')?.addEventListener('submit', (e) => {
             e.preventDefault();
-            const btn = e.target.querySelector('button');
+            const form = e.target;
+            const btn = form.querySelector('button');
+            const errorEl = document.getElementById('volunteer-form-error');
             const originalText = btn.innerHTML;
+            errorEl.classList.add('hidden');
             btn.innerHTML = 'Sending Application...';
             btn.disabled = true;
-            
-            setTimeout(() => {
-                btn.innerHTML = 'Application Sent! <span class="material-symbols-outlined">check_circle</span>';
-                btn.classList.replace('bg-primary', 'bg-tertiary');
-                e.target.reset();
-            }, 1500);
+
+            const formData = new FormData(form);
+            const payload = {
+                full_name: formData.get('full_name') || '',
+                email: formData.get('email') || '',
+                phone: formData.get('phone') || '',
+                area_of_interest: formData.get('area_of_interest') || '',
+                availability: formData.getAll('availability'),
+                experience: formData.get('experience') || '',
+            };
+
+            fetch('/api/volunteer', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            })
+                .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
+                .then(({ ok, data }) => {
+                    if (!ok) throw new Error(data.error || 'Something went wrong.');
+                    btn.innerHTML = 'Application Sent! <span class="material-symbols-outlined">check_circle</span>';
+                    btn.classList.replace('bg-primary', 'bg-tertiary');
+                    form.reset();
+                })
+                .catch((err) => {
+                    errorEl.textContent = err.message || 'Could not submit application. Please try again or email yanjufoundation@gmail.com.';
+                    errorEl.classList.remove('hidden');
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                });
         });
 
         // Sticky Header scroll effect

@@ -240,12 +240,6 @@
     input.addEventListener("keydown", function (e) {
       if (e.key === "Enter") send();
     });
-    // quick-reply chips
-    document.querySelectorAll("button.border.border-primary-fixed").forEach(function (chip) {
-      chip.addEventListener("click", function () {
-        send(chip.textContent.trim());
-      });
-    });
   }
 
   /* ---------- Footer cleanup: contact info lives only in the strip ---------- */
@@ -313,11 +307,141 @@
     els.forEach(function (el) { io.observe(el); });
   }
 
+  function wireNewsletterForm() {
+    var form = document.getElementById("newsletter-form");
+    if (!form) return;
+    var msg = document.getElementById("newsletter-form-message");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var btn = form.querySelector("button");
+      var originalText = btn.textContent;
+      btn.disabled = true;
+      msg.classList.add("hidden");
+      fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: form.email.value }),
+      })
+        .then(function (res) {
+          return res.json().then(function (data) {
+            return { ok: res.ok, data: data };
+          });
+        })
+        .then(function (result) {
+          if (!result.ok) throw new Error(result.data.error || "Something went wrong.");
+          msg.textContent = "Thanks for subscribing!";
+          msg.classList.remove("hidden");
+          form.reset();
+          btn.disabled = false;
+        })
+        .catch(function (err) {
+          msg.textContent = err.message || "Could not subscribe. Please try again.";
+          msg.classList.remove("hidden");
+          btn.disabled = false;
+        })
+        .finally(function () {
+          btn.textContent = originalText;
+        });
+    });
+  }
+
+  function wireSuccessCarousel() {
+    var root = document.getElementById("success-carousel");
+    if (!root) return;
+    var slides = Array.prototype.slice.call(root.querySelectorAll(".carousel-slide"));
+    var dots = Array.prototype.slice.call(root.querySelectorAll("#carousel-dots button"));
+    var prevBtn = document.getElementById("carousel-prev");
+    var nextBtn = document.getElementById("carousel-next");
+    var current = 0;
+    var timer;
+
+    function show(index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle("hidden", i !== current);
+      });
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle("bg-primary", i === current);
+        dot.classList.toggle("bg-outline-variant", i !== current);
+      });
+    }
+
+    function restartAutoplay() {
+      clearInterval(timer);
+      timer = setInterval(function () { show(current + 1); }, 7000);
+    }
+
+    prevBtn.addEventListener("click", function () { show(current - 1); restartAutoplay(); });
+    nextBtn.addEventListener("click", function () { show(current + 1); restartAutoplay(); });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener("click", function () { show(i); restartAutoplay(); });
+    });
+
+    show(0);
+    restartAutoplay();
+  }
+
+  function wireNewsletterWidgets() {
+    document.querySelectorAll(".yj-newsletter-widget").forEach(function (widget) {
+      var input = widget.querySelector(".yj-newsletter-input");
+      var btn = widget.querySelector(".yj-newsletter-submit");
+      var msg = widget.parentElement.querySelector(".yj-newsletter-message");
+      if (!input || !btn) return;
+
+      function submit() {
+        var email = input.value.trim();
+        if (!email) return;
+        btn.disabled = true;
+        fetch("/api/newsletter", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email }),
+        })
+          .then(function (res) {
+            return res.json().then(function (data) {
+              return { ok: res.ok, data: data };
+            });
+          })
+          .then(function (result) {
+            if (!result.ok) throw new Error(result.data.error || "Something went wrong.");
+            if (msg) {
+              msg.textContent = "Thanks for subscribing!";
+              msg.classList.remove("hidden");
+            }
+            input.value = "";
+          })
+          .catch(function (err) {
+            if (msg) {
+              msg.textContent = err.message || "Could not subscribe. Please try again.";
+              msg.classList.remove("hidden");
+            }
+          })
+          .finally(function () {
+            btn.disabled = false;
+          });
+      }
+
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        submit();
+      });
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          submit();
+        }
+      });
+    });
+  }
+
   function init() {
     buildMenu();
     buildReveal();
     dedupeFooter();
     buildCounters();
+    wireNewsletterForm();
+    wireNewsletterWidgets();
+    wireSuccessCarousel();
     var embedded = document.querySelector('input[placeholder="Type your message..."]');
     if (embedded) {
       wireEmbeddedChat(embedded);

@@ -112,7 +112,7 @@
       }
     </script>
 <link href="assets/enhance.css?v=4" rel="stylesheet">
-<script defer src="assets/enhance.js?v=4"></script>
+<script defer src="assets/enhance.js?v=8"></script>
 </head>
 <body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed sun-gradient">
 <!-- Top Navigation Bar -->
@@ -193,7 +193,7 @@
 <!-- Program Card 1 -->
 <div class="bg-surface-container-lowest rounded-[32px] overflow-hidden border border-outline-variant shadow-sm hover:shadow-2xl transition-shadow group">
 <div class="h-56 overflow-hidden">
-<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A group of students wearing school uniforms and engaging with modern educational technology in a bright, airy classroom. The atmosphere is professional yet warm, showing focus and the dignity of learning. Sunlight streams through the windows, creating a soft golden hue across the desk and tabletops." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAiMSKjEwa31X-lz3SPxiNZzISnj2imdnjf2ARKrqzkEQSBoF163llyzhNghHK-oyGM37A7EKpoG4yUX3JJUtK_0eZZ5Rb9ogqZPN7nCwGZ5r-HKDd9Pgntd720_-iifYGgUchaxYUYydCeYD1jovdbnCV1c54fiMWD2-dV-KrWBObSd5cNnyqVgb5XepN7czm__xht1I5bM4cuQSVXMU_WfF6AZnoLUAUgRuqRmhwt69xozxai2aUlbA')"></div>
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Yanju Foundation students during an educational outreach visit." style="background-image: url('assets/programs/educational-support.jpg')"></div>
 </div>
 <div class="p-8">
 <div class="flex items-center gap-3 mb-4">
@@ -209,7 +209,7 @@
 <!-- Program Card 2 -->
 <div class="bg-surface-container-lowest rounded-[32px] overflow-hidden border border-outline-variant shadow-sm hover:shadow-2xl transition-shadow group">
 <div class="h-56 overflow-hidden">
-<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A young adult professional having a one-on-one mentorship session with a student in a comfortable, modern community space. The professional is speaking with passion and the student looks inspired. The setting is clean with warm terracotta and cream accents, reflecting a high-quality mentorship environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDT_CKI6KYfiKgtYt-rZh0Yl_KZoeqJirvRWVR1XbFGZhFDh6XbtTF_43lhgdrgEyQ1rLrCpTfJnhuOp33qOXa4Oayk6tNdjcSIs6XtzVSA1jyBVigZ63n9nRu9os-nIvN6N1jLXdA1AWPcXJrrVk2mHiY7-Pn7BJvjeJOrErlLPve5ZxXa6rmlLnooclUWNehwFah3GmHuukw25TMDuelcwekZ9HxTDdvyiDxdWNMPvxmNSKyuZAL8eA')"></div>
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="The Purpose Driven Life book and journal, part of Yanju Foundation's Purpose Development reading list." style="background-image: url('assets/programs/purpose-development-book.jpg')"></div>
 </div>
 <div class="p-8">
 <div class="flex items-center gap-3 mb-4">
@@ -225,7 +225,7 @@
 <!-- Program Card 3 -->
 <div class="bg-surface-container-lowest rounded-[32px] overflow-hidden border border-outline-variant shadow-sm hover:shadow-2xl transition-shadow group">
 <div class="h-56 overflow-hidden">
-<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A vibrant community gathering where volunteers are distributing essential supplies and interacting with smiling local residents. The mood is celebratory and dignified. The visual palette includes lush greenery and warm earth tones, highlighting the Yanju Foundation's deep connection to the communities it serves." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDR6FsohGQKATP_Q0ibrtYZmcrkqHvAuiM_TwEM-heCzZEhZIxP5XKd5i7KT-sPJzU1Tu5OnJZfri1F4obwsuUR_fsYj_E2yBbRGszjmxElAiaOiXB-wsD09V_7Si0gFG6PzS7xCRexAog24M9awuuPQoCZlFx4egmkKvXhllPx1brzNZcWtPi5ydwoU70fGrNDRA1QH44WGyo3NJirZIs8Jelyi92HbCNNJJ6qLh52KUx5t8B_7lV1Zg')"></div>
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Yanju Foundation team engaging with the community during an outreach visit." style="background-image: url('assets/programs/community-outreach.jpg')"></div>
 </div>
 <div class="p-8">
 <div class="flex items-center gap-3 mb-4">
@@ -278,23 +278,78 @@
 </div>
 </div>
 </section>
-<!-- Success Story Testimonial -->
+<!-- Success Story Testimonial Carousel -->
 <section class="py-stack-lg px-gutter w-full max-w-container-max mx-auto text-center">
-<div class="bg-surface-bright rounded-[48px] p-12 md:p-20 shadow-2xl relative overflow-hidden">
+<div class="bg-surface-bright rounded-[48px] p-12 md:p-20 shadow-2xl relative overflow-hidden" id="success-carousel">
 <div class="absolute top-0 right-0 p-12 opacity-5 text-on-background">
 <span class="material-symbols-outlined text-[160px]" data-icon="format_quote">format_quote</span>
 </div>
+<button id="carousel-prev" aria-label="Previous story" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors z-20">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button id="carousel-next" aria-label="Next story" class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors z-20">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
 <div class="relative z-10 max-w-3xl mx-auto">
+
+<div class="carousel-slide" data-slide="0">
 <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-8 border-4 border-primary-fixed shadow-lg">
-<div class="w-full h-full bg-cover bg-center" data-alt="A portrait of a young man, a successful graduate, wearing professional attire and smiling confidently. He is the face of a success story, appearing proud and ambitious. The background is a clean, modern workspace with warm natural light." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpCQCjex34chHMCPjCeAHB-HFEd0x6HfOxFnurvenu5xkL0TZdHh8xxqfV-uIcLq8SwOWxEbYUnoNH_SWqg2WauzZTTZZlEcrG7wVpsv6SLEuRQnTaR0q5cp5AGiUEJ0-ICBOY9r3jImZvwNww1wvCUNuTO3pThLzXwgE91G3b0RQYo3akYau7JA281TUaxKLtfaYDNTFghQYK9z6mguujetA_He1mjqegtYZgACuBdpkh7ftbH1S21g')"></div>
+<div class="w-full h-full bg-cover bg-center" data-alt="Bankole Praise Oluwanifesimi, a Yanju Foundation beneficiary." style="background-image: url('assets/testimonials/praise-bankole.jpg')"></div>
 </div>
 <p class="font-headline-md text-headline-md italic text-on-background leading-relaxed mb-8">
-                    "Before Yanju Foundation, I only dreamed of school. Today, I am studying Engineering and mentoring others in my community. They didn't just give me money; they gave me a purpose."
+                    "I'm blown away by how Yanju Foundation has transformed my life. I've learned to set and achieve goals — and I'm stepping into a life of manifestation."
                 </p>
 <div>
-<div class="font-bold text-xl text-primary">Adebola Samuel</div>
-<div class="text-on-surface-variant">Foundation Scholar '21</div>
+<div class="font-bold text-xl text-primary">Bankole Praise Oluwanifesimi</div>
+<div class="text-on-surface-variant">Yanju Foundation Beneficiary</div>
 </div>
+</div>
+
+<div class="carousel-slide hidden" data-slide="1">
+<div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-8 border-4 border-primary-fixed shadow-lg">
+<div class="w-full h-full bg-cover bg-center" data-alt="Deborah Oladapo, a Yanju Foundation beneficiary." style="background-image: url('assets/testimonials/deborah-oladapo.jpg')"></div>
+</div>
+<p class="font-headline-md text-headline-md italic text-on-background leading-relaxed mb-8">
+                    "I'm more confident and expressive now. The foundation's teachings have helped me find my voice."
+                </p>
+<div>
+<div class="font-bold text-xl text-primary">Deborah Oladapo</div>
+<div class="text-on-surface-variant">Yanju Foundation Beneficiary</div>
+</div>
+</div>
+
+<div class="carousel-slide hidden" data-slide="2">
+<div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-8 border-4 border-primary-fixed shadow-lg">
+<div class="w-full h-full bg-cover bg-center" data-alt="Ochie ThankGod Nwoba, a Yanju Foundation beneficiary." style="background-image: url('assets/testimonials/thankgod-ochie.jpg')"></div>
+</div>
+<p class="font-headline-md text-headline-md italic text-on-background leading-relaxed mb-8">
+                    "The foundation's financial aid saved my career, paying my school fees. I'm grateful!"
+                </p>
+<div>
+<div class="font-bold text-xl text-primary">Ochie ThankGod Nwoba</div>
+<div class="text-on-surface-variant">Yanju Foundation Beneficiary</div>
+</div>
+</div>
+
+<div class="carousel-slide hidden" data-slide="3">
+<div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-8 border-4 border-primary-fixed shadow-lg">
+<div class="w-full h-full bg-cover bg-center" data-alt="Boluwatife Akande, a Yanju Foundation beneficiary." style="background-image: url('assets/testimonials/boluwatife-akande.jpg')"></div>
+</div>
+<p class="font-headline-md text-headline-md italic text-on-background leading-relaxed mb-8">
+                    "The foundation's teachings have clarified doubts and helped me find my purpose in Christ."
+                </p>
+<div>
+<div class="font-bold text-xl text-primary">Boluwatife Akande</div>
+<div class="text-on-surface-variant">Yanju Foundation Beneficiary</div>
+</div>
+</div>
+
+</div>
+<div class="flex justify-center gap-2 mt-8 relative z-10" id="carousel-dots">
+<button class="w-2.5 h-2.5 rounded-full bg-primary transition-colors" data-dot="0" aria-label="Go to story 1"></button>
+<button class="w-2.5 h-2.5 rounded-full bg-outline-variant transition-colors" data-dot="1" aria-label="Go to story 2"></button>
+<button class="w-2.5 h-2.5 rounded-full bg-outline-variant transition-colors" data-dot="2" aria-label="Go to story 3"></button>
+<button class="w-2.5 h-2.5 rounded-full bg-outline-variant transition-colors" data-dot="3" aria-label="Go to story 4"></button>
 </div>
 </div>
 </section>
@@ -306,10 +361,11 @@
 <p class="text-body-lg text-primary-fixed">Receive monthly stories of impact and invitations to our community events.</p>
 </div>
 <div class="flex-1 w-full max-w-md">
-<form class="flex flex-col sm:flex-row gap-4" onsubmit="event.preventDefault(); alert('Subscribed!')">
-<input class="flex-1 bg-white/10 border-white/20 rounded-full px-6 py-4 text-white placeholder:text-primary-fixed/60 focus:ring-2 focus:ring-white outline-none" placeholder="Your Email Address" type="email">
-<button class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-primary-fixed transition-colors">Join Us</button>
+<form class="flex flex-col sm:flex-row gap-4" id="newsletter-form">
+<input class="flex-1 bg-white/10 border-white/20 rounded-full px-6 py-4 text-white placeholder:text-primary-fixed/60 focus:ring-2 focus:ring-white outline-none" placeholder="Your Email Address" type="email" name="email" required>
+<button class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-primary-fixed transition-colors" type="submit">Join Us</button>
 </form>
+<p class="text-sm text-white/90 mt-2 hidden" id="newsletter-form-message"></p>
 </div>
 </div>
 </section>

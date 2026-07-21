@@ -1,0 +1,412 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Admin | Yanju Foundation</title>
+<meta name="robots" content="noindex, nofollow">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary": "#d97706",
+          "primary-container": "#b45309",
+          "secondary": "#c2410c",
+          "background": "#fff8f6",
+          "surface": "#fff8f6",
+          "surface-container": "#ffeae1",
+          "surface-container-high": "#ffe2d7",
+          "on-surface": "#451a03",
+          "on-surface-variant": "#554336",
+          "outline-variant": "#dbc2b0",
+          "error": "#ba1a1a",
+          "error-container": "#ffdad6"
+        },
+        "fontFamily": {
+          "headline": ["Playfair Display"],
+          "body": ["Inter"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .tab-btn.active { background-color: #d97706; color: #fff; }
+  .gallery-thumb { aspect-ratio: 4/3; background-size: cover; background-position: center; }
+</style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased min-h-screen">
+
+<!-- Login Screen -->
+<div id="login-screen" class="min-h-screen flex items-center justify-center px-6">
+  <div class="w-full max-w-sm bg-white rounded-2xl shadow-lg p-8 space-y-6">
+    <div class="text-center space-y-1">
+      <img src="assets/logo.png" alt="Yanju Foundation Logo" class="h-16 mx-auto object-contain">
+      <h1 class="font-headline text-2xl font-bold">Admin Login</h1>
+      <p class="text-sm text-on-surface-variant">Staff access only</p>
+    </div>
+    <form id="login-form" class="space-y-4">
+      <div class="space-y-2">
+        <label class="text-sm font-semibold px-1">Password</label>
+        <input type="password" name="password" required class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+      </div>
+      <p id="login-error" class="text-sm text-error hidden"></p>
+      <button type="submit" class="w-full py-3 bg-primary text-white font-semibold rounded-full shadow-md hover:brightness-105 transition-all">Log In</button>
+    </form>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard" class="hidden">
+  <header class="sticky top-0 z-10 bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Yanju Foundation Logo" class="h-10 object-contain">
+        <span class="font-headline font-bold text-lg">Admin Dashboard</span>
+      </div>
+      <button id="logout-btn" class="px-5 py-2 rounded-full border-2 border-secondary text-secondary font-semibold hover:bg-secondary hover:text-white transition-all">Log Out</button>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-8 space-y-6">
+    <div class="flex flex-wrap gap-3">
+      <button class="tab-btn active px-6 py-2 rounded-full border-2 border-primary text-primary font-semibold transition-all" data-tab="volunteers">Volunteer Applications</button>
+      <button class="tab-btn px-6 py-2 rounded-full border-2 border-primary text-primary font-semibold transition-all" data-tab="pledges">Donation Pledges</button>
+      <button class="tab-btn px-6 py-2 rounded-full border-2 border-primary text-primary font-semibold transition-all" data-tab="newsletter">Newsletter Signups</button>
+      <button class="tab-btn px-6 py-2 rounded-full border-2 border-primary text-primary font-semibold transition-all" data-tab="gallery">Gallery Manager</button>
+    </div>
+
+    <!-- Volunteers Tab -->
+    <section id="tab-volunteers" class="space-y-4">
+      <div class="overflow-x-auto bg-white rounded-2xl shadow-sm">
+        <table class="w-full text-sm">
+          <thead class="bg-surface-container text-left">
+            <tr>
+              <th class="px-4 py-3">Name</th>
+              <th class="px-4 py-3">Email</th>
+              <th class="px-4 py-3">Phone</th>
+              <th class="px-4 py-3">Interest</th>
+              <th class="px-4 py-3">Availability</th>
+              <th class="px-4 py-3">Experience</th>
+              <th class="px-4 py-3">Submitted</th>
+            </tr>
+          </thead>
+          <tbody id="volunteers-body">
+            <tr><td class="px-4 py-6 text-on-surface-variant" colspan="7">Loading&hellip;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Pledges Tab -->
+    <section id="tab-pledges" class="space-y-4 hidden">
+      <div class="overflow-x-auto bg-white rounded-2xl shadow-sm">
+        <table class="w-full text-sm">
+          <thead class="bg-surface-container text-left">
+            <tr>
+              <th class="px-4 py-3">Name</th>
+              <th class="px-4 py-3">Email</th>
+              <th class="px-4 py-3">Phone</th>
+              <th class="px-4 py-3">Amount</th>
+              <th class="px-4 py-3">Frequency</th>
+              <th class="px-4 py-3">Method</th>
+              <th class="px-4 py-3">Submitted</th>
+            </tr>
+          </thead>
+          <tbody id="pledges-body">
+            <tr><td class="px-4 py-6 text-on-surface-variant" colspan="7">Loading&hellip;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Newsletter Tab -->
+    <section id="tab-newsletter" class="space-y-4 hidden">
+      <div class="overflow-x-auto bg-white rounded-2xl shadow-sm">
+        <table class="w-full text-sm">
+          <thead class="bg-surface-container text-left">
+            <tr>
+              <th class="px-4 py-3">Email</th>
+              <th class="px-4 py-3">Subscribed</th>
+            </tr>
+          </thead>
+          <tbody id="newsletter-body">
+            <tr><td class="px-4 py-6 text-on-surface-variant" colspan="2">Loading&hellip;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Gallery Tab -->
+    <section id="tab-gallery" class="space-y-6 hidden">
+      <div class="bg-white rounded-2xl shadow-sm p-6 space-y-4">
+        <h2 class="font-headline text-lg font-bold">Upload a Photo</h2>
+        <form id="upload-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="space-y-2 md:col-span-2">
+            <label class="text-sm font-semibold px-1">Photo file</label>
+            <input type="file" name="file" accept="image/*" required class="w-full px-4 py-3 rounded-xl border border-outline-variant">
+          </div>
+          <div class="space-y-2">
+            <label class="text-sm font-semibold px-1">Title</label>
+            <input type="text" name="title" placeholder="Learning Together" class="w-full px-4 py-3 rounded-xl border border-outline-variant outline-none">
+          </div>
+          <div class="space-y-2">
+            <label class="text-sm font-semibold px-1">Category</label>
+            <select name="category" class="w-full px-4 py-3 rounded-xl border border-outline-variant outline-none bg-white">
+              <option value="education">Education</option>
+              <option value="mentorship">Mentorship</option>
+              <option value="outreach">Outreach</option>
+              <option value="events">Events</option>
+            </select>
+          </div>
+          <div class="space-y-2 md:col-span-2">
+            <label class="text-sm font-semibold px-1">Alt text (for accessibility)</label>
+            <input type="text" name="alt_text" placeholder="Students in classroom" class="w-full px-4 py-3 rounded-xl border border-outline-variant outline-none">
+          </div>
+          <p id="upload-error" class="text-sm text-error hidden md:col-span-2"></p>
+          <button type="submit" class="md:col-span-2 py-3 bg-primary text-white font-semibold rounded-full shadow-md hover:brightness-105 transition-all">Upload Photo</button>
+        </form>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="gallery-grid">
+        <p class="col-span-full text-on-surface-variant">Loading&hellip;</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str == null ? '' : String(str);
+    return div.innerHTML;
+  }
+
+  function formatDate(iso) {
+    if (!iso) return '';
+    return new Date(iso).toLocaleString('en-NG', { dateStyle: 'medium', timeStyle: 'short' });
+  }
+
+  const loginScreen = document.getElementById('login-screen');
+  const dashboard = document.getElementById('dashboard');
+
+  function showDashboard() {
+    loginScreen.classList.add('hidden');
+    dashboard.classList.remove('hidden');
+    loadVolunteers();
+    loadPledges();
+    loadNewsletter();
+    loadGallery();
+  }
+
+  function showLogin() {
+    dashboard.classList.add('hidden');
+    loginScreen.classList.remove('hidden');
+  }
+
+  // ---- Auth ----
+  document.getElementById('login-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const errorEl = document.getElementById('login-error');
+    errorEl.classList.add('hidden');
+    fetch('/api/admin/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: form.password.value }),
+    })
+      .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
+      .then(({ ok, data }) => {
+        if (!ok) throw new Error(data.error || 'Login failed');
+        form.reset();
+        showDashboard();
+      })
+      .catch((err) => {
+        errorEl.textContent = err.message;
+        errorEl.classList.remove('hidden');
+      });
+  });
+
+  document.getElementById('logout-btn').addEventListener('click', () => {
+    fetch('/api/admin/logout', { method: 'POST' }).finally(showLogin);
+  });
+
+  // ---- Tabs ----
+  document.querySelectorAll('.tab-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('main > section').forEach((s) => s.classList.add('hidden'));
+      document.getElementById('tab-' + btn.dataset.tab).classList.remove('hidden');
+    });
+  });
+
+  // ---- Volunteers ----
+  function loadVolunteers() {
+    fetch('/api/admin/volunteers')
+      .then((res) => {
+        if (res.status === 401) { showLogin(); return []; }
+        return res.json();
+      })
+      .then((rows) => {
+        const body = document.getElementById('volunteers-body');
+        if (!rows || !rows.length) {
+          body.innerHTML = '<tr><td class="px-4 py-6 text-on-surface-variant" colspan="7">No applications yet.</td></tr>';
+          return;
+        }
+        body.innerHTML = rows.map((r) => `
+          <tr class="border-t border-outline-variant">
+            <td class="px-4 py-3 font-semibold">${escapeHtml(r.full_name)}</td>
+            <td class="px-4 py-3"><a class="text-primary hover:underline" href="mailto:${escapeHtml(r.email)}">${escapeHtml(r.email)}</a></td>
+            <td class="px-4 py-3">${escapeHtml(r.phone)}</td>
+            <td class="px-4 py-3">${escapeHtml(r.area_of_interest)}</td>
+            <td class="px-4 py-3">${escapeHtml((r.availability || []).join(', '))}</td>
+            <td class="px-4 py-3 max-w-xs">${escapeHtml(r.experience)}</td>
+            <td class="px-4 py-3 whitespace-nowrap text-on-surface-variant">${formatDate(r.created_at)}</td>
+          </tr>
+        `).join('');
+      });
+  }
+
+  // ---- Pledges ----
+  function loadPledges() {
+    fetch('/api/admin/pledges')
+      .then((res) => {
+        if (res.status === 401) { showLogin(); return []; }
+        return res.json();
+      })
+      .then((rows) => {
+        const body = document.getElementById('pledges-body');
+        if (!rows || !rows.length) {
+          body.innerHTML = '<tr><td class="px-4 py-6 text-on-surface-variant" colspan="7">No pledges yet.</td></tr>';
+          return;
+        }
+        body.innerHTML = rows.map((r) => `
+          <tr class="border-t border-outline-variant">
+            <td class="px-4 py-3 font-semibold">${escapeHtml(r.first_name)} ${escapeHtml(r.last_name)}</td>
+            <td class="px-4 py-3"><a class="text-primary hover:underline" href="mailto:${escapeHtml(r.email)}">${escapeHtml(r.email)}</a></td>
+            <td class="px-4 py-3">${escapeHtml(r.phone)}</td>
+            <td class="px-4 py-3">&#8358;${escapeHtml((r.amount || 0).toLocaleString('en-NG'))}</td>
+            <td class="px-4 py-3">${escapeHtml(r.frequency)}</td>
+            <td class="px-4 py-3">${escapeHtml(r.method)}</td>
+            <td class="px-4 py-3 whitespace-nowrap text-on-surface-variant">${formatDate(r.created_at)}</td>
+          </tr>
+        `).join('');
+      });
+  }
+
+  // ---- Newsletter ----
+  function loadNewsletter() {
+    fetch('/api/admin/newsletter')
+      .then((res) => {
+        if (res.status === 401) { showLogin(); return []; }
+        return res.json();
+      })
+      .then((rows) => {
+        const body = document.getElementById('newsletter-body');
+        if (!rows || !rows.length) {
+          body.innerHTML = '<tr><td class="px-4 py-6 text-on-surface-variant" colspan="2">No signups yet.</td></tr>';
+          return;
+        }
+        body.innerHTML = rows.map((r) => `
+          <tr class="border-t border-outline-variant">
+            <td class="px-4 py-3">${escapeHtml(r.email)}</td>
+            <td class="px-4 py-3 text-on-surface-variant">${formatDate(r.created_at)}</td>
+          </tr>
+        `).join('');
+      });
+  }
+
+  // ---- Gallery ----
+  function loadGallery() {
+    fetch('/api/gallery')
+      .then((res) => res.json())
+      .then((images) => {
+        const grid = document.getElementById('gallery-grid');
+        if (!images.length) {
+          grid.innerHTML = '<p class="col-span-full text-on-surface-variant">No photos yet.</p>';
+          return;
+        }
+        grid.innerHTML = images.map((img) => `
+          <div class="relative rounded-xl overflow-hidden shadow-sm group" data-id="${img.id}">
+            <div class="gallery-thumb" style="background-image: url('${img.url}')"></div>
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-start justify-end p-2">
+              <button class="delete-photo opacity-0 group-hover:opacity-100 transition-opacity bg-error text-white rounded-full w-8 h-8 flex items-center justify-center" data-id="${img.id}" title="Delete photo">
+                <span class="material-symbols-outlined text-base">delete</span>
+              </button>
+            </div>
+            <p class="text-xs px-2 py-1 truncate">${escapeHtml(img.title)}</p>
+          </div>
+        `).join('');
+        grid.querySelectorAll('.delete-photo').forEach((btn) => {
+          btn.addEventListener('click', () => deletePhoto(btn.dataset.id));
+        });
+      });
+  }
+
+  function deletePhoto(id) {
+    if (!confirm('Delete this photo? This cannot be undone.')) return;
+    fetch('/api/admin/gallery/' + id, { method: 'DELETE' })
+      .then((res) => {
+        if (res.status === 401) { showLogin(); return; }
+        loadGallery();
+      });
+  }
+
+  document.getElementById('upload-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const errorEl = document.getElementById('upload-error');
+    const btn = form.querySelector('button[type="submit"]');
+    const file = form.file.files[0];
+    errorEl.classList.add('hidden');
+    if (!file) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Uploading…';
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const base64 = reader.result.split(',')[1];
+      fetch('/api/admin/gallery', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          filename: file.name,
+          content_base64: base64,
+          title: form.title.value,
+          category: form.category.value,
+          alt_text: form.alt_text.value,
+        }),
+      })
+        .then((res) => {
+          if (res.status === 401) { showLogin(); throw new Error('Session expired'); }
+          return res.json().then((data) => ({ ok: res.ok, data }));
+        })
+        .then(({ ok, data }) => {
+          if (!ok) throw new Error(data.error || 'Upload failed');
+          form.reset();
+          loadGallery();
+        })
+        .catch((err) => {
+          errorEl.textContent = err.message;
+          errorEl.classList.remove('hidden');
+        })
+        .finally(() => {
+          btn.disabled = false;
+          btn.textContent = 'Upload Photo';
+        });
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // ---- Boot: check if already logged in ----
+  fetch('/api/admin/newsletter')
+    .then((res) => (res.status === 401 ? showLogin() : showDashboard()))
+    .catch(showLogin);
+</script>
+</body></html>

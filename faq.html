@@ -129,7 +129,7 @@
         }
     </script>
 <link href="assets/enhance.css?v=4" rel="stylesheet">
-<script defer src="assets/enhance.js?v=4"></script>
+<script defer src="assets/enhance.js?v=8"></script>
 </head>
 <body class="bg-surface font-body-md text-on-surface">
 <!-- TopNavBar -->
@@ -250,33 +250,6 @@
                                 Hi! I'm Yanju's assistant — ask me anything about our mission, donations, or volunteer opportunities.
                             </div>
 </div>
-<!-- Message Sent (Sample) -->
-<div class="chat-bubble-in flex flex-row-reverse items-end gap-3 max-w-[85%] ml-auto">
-<div class="bg-primary p-4 rounded-2xl rounded-br-none shadow-sm text-white font-body-md">
-                                How can I help with the STEM program?
-                            </div>
-</div>
-<!-- Message Received -->
-<div class="chat-bubble-in flex items-end gap-3 max-w-[85%]">
-<div class="w-8 h-8 rounded-full bg-primary-container flex-shrink-0 flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
-</div>
-<div class="bg-surface-container-high p-4 rounded-2xl rounded-bl-none shadow-sm text-on-surface-variant font-body-md">
-                                We're always looking for mentors! You can participate by:
-                                <ul class="list-disc ml-4 mt-2 space-y-1">
-<li class="">Donating lab equipment</li>
-<li class="">Leading a virtual workshop</li>
-<li class="">Sponsoring a student's project</li>
-</ul>
-                                Would you like the volunteer link?
-                            </div>
-</div>
-</div>
-<!-- Quick Reply Chips -->
-<div class="px-6 py-2 flex flex-wrap gap-2 bg-surface-container-lowest border-t border-outline-variant/30">
-<button class="px-4 py-2 rounded-full border border-primary-fixed text-primary text-xs font-label-md hover:bg-primary-fixed transition-colors active:scale-95">How do I donate?</button>
-<button class="px-4 py-2 rounded-full border border-primary-fixed text-primary text-xs font-label-md hover:bg-primary-fixed transition-colors active:scale-95">How do I volunteer?</button>
-<a href="gallery.html" class="px-4 py-2 rounded-full border border-primary-fixed text-primary text-xs font-label-md hover:bg-primary-fixed transition-colors active:scale-95" style="text-align:center">Upcoming events</a>
 </div>
 <!-- Input Area -->
 <div class="p-6 bg-white border-t border-outline-variant">
@@ -365,12 +338,13 @@
 <div class="col-span-1">
 <h5 class="font-label-md text-label-md text-primary mb-4">Subscribe</h5>
 <p class="font-body-md text-body-md text-on-surface-variant mb-4">Stay updated with our latest success stories.</p>
-<div class="flex gap-2">
-<input class="flex-1 bg-white rounded-full border-outline-variant px-4 py-2 focus:ring-secondary" placeholder="Email" type="email">
-<button class="bg-secondary text-white w-10 h-10 rounded-full flex items-center justify-center hover:scale-105 transition-transform">
+<div class="flex gap-2 yj-newsletter-widget">
+<input class="flex-1 bg-white rounded-full border-outline-variant px-4 py-2 focus:ring-secondary yj-newsletter-input" placeholder="Email" type="email">
+<button class="bg-secondary text-white w-10 h-10 rounded-full flex items-center justify-center hover:scale-105 transition-transform yj-newsletter-submit">
 <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
 </button>
 </div>
+<p class="yj-newsletter-message text-sm mt-2 hidden"></p>
 </div>
 </div>
 <div class="max-w-container-max mx-auto px-gutter py-6 border-t border-outline-variant/30">

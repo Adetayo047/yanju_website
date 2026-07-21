@@ -172,7 +172,7 @@
         }
     </style>
 <link href="assets/enhance.css?v=4" rel="stylesheet">
-<script defer src="assets/enhance.js?v=4"></script>
+<script defer src="assets/enhance.js?v=8"></script>
 </head>
 <body class="bg-surface text-on-surface font-body-md antialiased">
 <!-- Top Navigation Bar -->
@@ -591,6 +591,21 @@
         feedback.classList.add('text-tertiary');
         var last = document.getElementById('donor-last').value.trim();
         var phone = document.getElementById('donor-phone').value.trim();
+
+        fetch('/api/donate-pledge', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                first_name: first,
+                last_name: last,
+                email: email,
+                phone: phone,
+                amount: state.amount,
+                frequency: state.freq,
+                method: state.method,
+            }),
+        }).catch(function () { /* mailto below still gets the pledge to us either way */ });
+
         var body = 'Hello Yanju Foundation,%0D%0A%0D%0AI would like to donate ' + encodeURIComponent(fmt(state.amount)) + (state.freq === 'monthly' ? ' every month' : ' (one-time)') + ' via ' + (state.method === 'card' ? 'debit/credit card' : 'bank transfer') + '.%0D%0A%0D%0AName: ' + encodeURIComponent(first + ' ' + last) + '%0D%0AEmail: ' + encodeURIComponent(email) + (phone ? '%0D%0APhone: ' + encodeURIComponent(phone) : '') + '%0D%0A%0D%0APlease send me the details to complete my donation.%0D%0A%0D%0AThank you!';
         window.location.href = 'mailto:yanjufoundation@gmail.com?subject=' + encodeURIComponent('Donation pledge \u2014 ' + fmt(state.amount)) + '&body=' + body;
     });
