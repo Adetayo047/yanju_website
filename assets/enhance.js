@@ -82,7 +82,9 @@
   /* ---------- Scroll reveal ---------- */
   function buildReveal() {
     if (!("IntersectionObserver" in window)) return;
-    var targets = document.querySelectorAll("main section, section, footer");
+    var targets = document.querySelectorAll(
+      "main section:not(.no-reveal), section:not(.no-reveal), footer:not(.no-reveal)"
+    );
     var seen = new Set();
     var list = [];
     targets.forEach(function (el) {
