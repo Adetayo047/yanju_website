@@ -288,6 +288,12 @@ class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=HERE, **kwargs)
 
+    def end_headers(self):
+        # Dev server: never let the browser cache pages/assets under separate
+        # URLs (e.g. "/" vs "/index.html") while content is actively changing.
+        self.send_header("Cache-Control", "no-store")
+        super().end_headers()
+
     # ---------- helpers ----------
     def _send_json(self, status, payload, extra_header_fn=None):
         out = json.dumps(payload).encode()
